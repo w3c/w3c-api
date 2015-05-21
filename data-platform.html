@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<title>W3C Data Platform</title>
+<h1>W3C Data Platform</h1>
+<section>
+<p>This page is part of W3C project to use a data-centric approach to redesigning its site and services. If you have comments, please write to <a href="http://lists.w3.org/Archives/Public/site-comments/">site comments</a>. Note that this is a public archive of messages.</p>
+<p>For particulars about the design of the API, and the implementation of a prototype for search, see data platform design.</p>
+</section>
+<section>
+<h2>People</h2>
+<p>Antonio, Denis, Jean-Gui, Ted, Ian, Daniel Davis</p>
+
+<h2>Scope</h2>
+<p>At the current time:</p>
+<ul>
+  <li>Access to data about W3C specifications, groups, and events.
+    <ul>
+      <li>Out of scope for the first version: data about mail
+    </ul>
+  <li>Still in scope but lower priority: individuals, organizations.
+  <li>JSON representation of data
+</ul>
+
+<h2>Timeline</h2>
+<p>Depends on:</p>
+<ul>
+  <li>Whether we can leverage some modules/extensions
+  <li>Changes to CG site based on beta
+</ul>
+
+<h3>Rough estimate</h3>
+<p>Timeline:</p>
+<ul>
+  <li>August, September 2014: Research into what we can use
+  <li>September 2014: Work starts in earnest
+  <li>December 2014: Crisp definition of APIs; templates for lists and metadata pages available
+  <li>February 2015: APIs available publicly
+</ul>
+
+<h2>Requirements</h2>
+<h3>Project Requirements</h3>
+<ul>
+  <li>The APIs must be developed in public.
+  <li>The APIs must be publicly documented.
+</ul>
+
+<h3>Design Requirements</h3>
+<ul>
+  <li>Client-side functionality in key index pages:
+    <ul>
+      <li>For specifications: Filtering by group, title, tag
+      <li>For groups: Filtering by title, tag
+      <li>For events: filtering by title, tag
+    </ul>
+  <li>APIs return JSON
+    <ul>
+      <li>To be formatted on the client side
+      <li>In the future there may be APIs for getting HTML-formatted information (e.g., for inclusion on vertical pages)
+    </ul>
+  <li>APIs must be able to take into account the user's credentials.
+    <ul>
+      <li>For example, for a given API we might provide Member-only additional information if the user is logged in with an appropriate account.
+    </ul>
+  <li>Filter/sort states on the client should be URI addressable
+    <ul>
+      <li>We will need general purpose query strings
+      <li>We may also want some friendlier URIs for common queries.
+    </ul>
+  <li>There should be an "all" view of each kind of index (specs, groups, etc.) that does not rely on JavaScript.
+</ul>
+
+<h4>Questions</h4>
+
+<ul>
+    <li>How will we identify individual specifications? Related specifications (e.g., short name)?
+    <li>How will we identify individual groups? Activities? Domains?
+</ul>
+
+<h3>Server Requirements</h3>
+
+<ul>
+    <li>Our data servers must be extremely high performance (e.g., with strong caching in front).
+    <ul>
+        <li>Some symfony, some between that and public (like varnish)
+    </ul>
+    <li>We need to consider unwanted bot traffic as we will have a larger number of URIs advertised.
+</ul>
+
+<h4>Questions</h4>
+
+<ul>
+    <li>Our current framework sits on top of several databases that have some inconsistencies in field name conventions and other things which if exposed directly could confuse or frustrate developers. There are extensions to our framework that could greatly facilitate in creating this API but not with the best forward facing mapping. How much does this need to be cleaned up to make it more intuitive?
+    <li>W3C logic on publications workflow, group formation etc would be challenging to permit modification through the Web API (eg POST of revised or new JSON) even with authentication. What would be desirable to allow writes to? Individuals' information, with the exception of organization affiliation as that requires verification, is a candidate.
+    <li>Should the API URI scheme leverage our current (not visible to public at present) convention for groups, users and specs or establish a new scheme? It would be nice to use the existing for discoverability and consistency but a new URI space could be beneficial for caching, scalability, acl and other considerations.
+    <li>Do we want to be our own CDN?
+</ul>
+
+<h3>Privacy requirements</h3>
+
+<ul>
+    <li>Will address when we get to individuals and members.
+</ul>
+
+<h2>Use Cases</h2>
+<h3>Specifications</h3>
+
+<ul>
+    <li>A developer wants to write a new app based on our data and requires all the data about all specifications.
+    <ul>
+        <li>Includes all Technical Reports of any status and all registered CG and BG reports.
+    </ul>
+    <li>TR page views
+    <ul>
+        <li>Each view will be a list of Limited_Specification_Data restricted to WG/IG publications.
+        <li>Each view will allow:
+        <ul>
+            <li>Sorting by date (ascending/descending), title (ascending/descending)
+            <li>Filtering by group, title, tag
+        </ul>
+        <li>Views
+        <ul>
+            <li>Fifty most recently published specifications, and the ability to request the next 50.
+            <li>All publications within a date range (e.g., for AC meeting fact sheet)
+            <li>The most recent draft of every technical report.
+        </ul>
+    </ul>
+    <li>Group wishes to create custom display of information about its publications
+    <ul>
+        <li>Specifications published by a list of 1 or more identified groups, all data.
+        <li>Specifications published by a list of 1 or more identified groups, Limited_Specification_Data
+    </ul>
+    <li>Per specification
+    <ul>
+        <li>All data for an identified specification; this will be used to construct the "spec view" for each spec in the TR page.
+    <li>Title query
+    </ul>
+    <ul>
+        <li>Limited_Specification_Data for all specifications whose title at least partially matches (case-insensitive) a string.
+    </ul>
+    <li>Tag query
+    <ul>
+        <li>Limited_Specification_Data for all specifications whose tags correspond exactly to an input list of tags. We will use this in the "major topic" views (e.g., show me specs of particular interest to the automotive industry).
+    </ul>
+</ul>
+
+<h4>Notes</h4>
+
+<ul>
+    <li>We are only planning limited query capabilities. For custom queries, use a series of individual queries.
+</ul>
+
+<h3>Groups</h3>
+  
+<ul>
+    <li>A developer wants to write a new app based on our data and requires all the data about all groups.
+    <ul>
+        <li>Includes WGs, IGs, CGs, BGs, Coordination Groups, TAG, and AB
+    </ul>
+    <li>List of Groups page
+    <ul>
+        <li>A list of Limited_Specification_Data
+        <li>Allow:
+        <ul>
+            <li>Sorting by title (ascending/descending)
+            <li>Filtering by domain, title, tag
+        </ul>
+    </ul>
+    <li>Per group
+    <ul>
+        <li>All data for an identified group; this will be used to construct the "group view" for each group in the list
+    </ul>
+    <li>Title query
+    <ul>
+        <li>Limited_Specification_Data for all groups whose title at least partially matches (case-insensitive) a string.
+    </ul>
+    <li>Tag query
+    <ul>
+        <li>Limited_Specification_Data for all groups whose tags correspond exactly to an input list of tags. We will use this in the "major topic" views (e.g., show me groups of particular interest to the automotive industry).
+    </ul>
+</ul>
+
+<h3>Individuals</h3>
+
+<ul>
+    <li>Group participation
+    <li>Roles (e.g., editor of which spec)
+</ul>
+
+<h3>Organizations</h3>
+
+<ul>
+    <li>@@
+</ul>
+
+<h3>Events</h3>
+
+Note: "Event" here refers to anything with a date/time stamp. We plan to integrate meeting information, publication information, review end dates, etc. into a unified W3C calendar.
+
+<ul>
+    <li>A developer wants to write a new app based on our data and requires all the data about all events.
+    <ul>
+        <li>Includes meetings and other events, publications, spec/charter review start and end dates, election deadlines, registration deadlines.
+    </ul>
+    <li>W3C calendar
+    <ul>
+        <li>A list of Limited_Event_Data
+    </ul>
+    <li>Title query
+    <ul>
+        <li>Limited_Event_Data for all events whose title at least partially matches (case-insensitive) a string.
+    </ul>
+    <li>Tag query
+    <ul>
+        <li>Limited_Event_Data for all events whose tags correspond exactly to an input list of tags. We will use this in the "major topic" views (e.g., show me events of particular interest to the automotive industry).
+    </ul>
+</ul>
+
+<h2>APIs</h2>
+<h3>Specifications</h3>
+<h3>Groups</h3>
+<h3>Events</h3>
+
+<h2>Data</h2>
+<h3>Specifications</h3>
+
+<ul>
+    <li>@IJ likely to rewrite this as a table with different profiles, including "all" and "limited"
+</ul>
+
+<h4>Limited Specification Data</h4>
+
+<ul>
+    <li>Title
+    <li>Link to latest WD
+    <li>Publication date
+    <li>Status
+    <li>Review end date (if applicable)
+    <li>Identifier(s) of responsible group(s)
+    <li>Specification tags
+    <li>URI to get full data
+</ul>
+
+<h4>Full Public Specification Data</h4>
+
+<h3>Groups</h3>
+<h4>Limited Group Data</h4>
+
+<ul>
+    <li>Title
+    <li>URI of group home
+    <li>Group type
+    <li>Identifier of Domain
+    <li>Group tags
+    <li>URI to get full data
+</ul>
+
+<h4>Full Public Group Data</h4>
+<h4>Additional Member Data</h4>
+
+<h3>Events</h3>
+<h4>Limited Event Data</h4>
+
+<ul>
+    <li>Title
+    <li>URI of event announcement (e.g., home page or news item)
+    <li>Event start/end dates
+    <li>Event location (may be empty)
+    <li>Event type
+    <li>Event tags
+    <li>URI to get full data
+</ul>
+
+<h4>Full Public Event Data</h4>
+<h4>Additional Member Data</h4>
+
+<h2>Notes on Performance</h2>
+
+<ul>
+    <li>One idea is to create cached copies of data since it does not change that frequently. This can be server-side included (or accessed by URL).
+</ul>
+
+<h2>Notes on Pages without Javascript</h2>
+<ul>
+    <li>When JS is turned off, we want to provide access to all the data, meaning we serve an HTML file. One technique for this is to use something like phantom.js to format the all.html page, which gets updated on a regular basis. This would allow us to reuse the same templates for "view some" as for "view all." PLH likes this approach but wants to be sure that this technique will be available in a decade.
+</ul>
+
+<h2>Feeds/Notifications</h2>
+
+<ul>
+    <li>Twitter?
+    <li>Atom?
+</ul>
+
+<h2>Daniel Davis URI notes</h2>
+
+(Based on guidelines from "Web API Design" by Brian Mulloy, <a href="http://daniemon.com/blog/web-api-design-a-definitive-guide/">summarised here</a>.)
+
+The structure of API URLs would be:
+<blockquote>
+/collection/item
+</blockquote>
+
+To get all children within a parent resource, the resources would be listed hierarchically:
+
+<blockquote>
+/collection/item/sub-collection
+</blockquote>
+
+For filtering and queries beyond the base resources, we can use "?" parameters:
+
+<blockquote>
+/collection/item?filter=value
+</blockquote>
+
+This gives us a couple of benefits:
+
+<ul>
+    <li>Consistency and predictability (which should make it future-proof)
+    <li>Uses existing URL strings for specs, groups, etc.
+</ul>
+
+<h3>Examples</h3>
+
+<blockquote>
+/groups - data for all groups
+/groups/dpub - data for DigiPub group
+/domains/ink - data for INK domain
+</blockquote>
+
+<blockquote>
+/domains/ink/groups - data for all groups within INK domain
+</blockquote>
+
+<blockquote>
+/domains/ink/groups?type=ig - data for all IGs within the INK domain
+/specs/discovery-api - data for the Network Service Discovery API
+/groups/dap/specs?status=wd - data for all WD specs in DAP WG
+</blockquote>
+
+<h2>Discussion</h2>
+
+<ul>
+  <li><a href="https://www.w3.org/2014/09/09-comm-minutes.html">9 September 2014 minutes</a>
+</ul>
+
+<h2>Resources</h2>
+
+<ul>
+  <li><a href="https://www.w3.org/wiki/SpecProd/Restyle">Tantek/Elika work on spec styles</a>
+</ul>
+</section>
+</html>
