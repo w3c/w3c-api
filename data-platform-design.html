@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Data Platform Design</title>
+<h1>Data Platform Design</h1>
+<section>
+<h2>Introduction</h2>
+  <p>This page originates from the discussion about a new "data-centric approach" to the W3C site. In particular, it is concerned with <b>a limited JSON API</b> that would be open to third parties, and <b>renovated (dynamic) features to search and filter</b> main nodes of information on the site.</p>
+</section>
+<section>
+<h2>Information architecture</h2>
+<p>Main entities on our DB, relations among them, and their attributes <sup><a href="#ref1">[1]</a><a href="#ref2">[2]</a><a href="#ref3">[3]</a><a href="#ref4">[4]</a><a href="#ref5">[5]</a></sup>.</p>
+
+<h3>Hierarchy of entities</h3>
+<ul>
+  <li>Domains.
+    <ul>
+      <li>Activities.
+      <ul>
+        <li>Groups.
+        <ul>
+          <li>Working groups.
+          <li>Community groups.
+          <li>Business groups.
+          <li>Interest groups.
+          <li>Coordination groups.
+          <li>Task forces.
+          <li>Charters.
+        </ul>
+      </ul>
+    </ul>
+  <li>Organisations.
+  <li>Specs.
+    <ul>
+      <li>Versions.
+      <li>Translations.
+    </ul>
+  <li>Events.
+    <ul>
+      <li>Talks (might be a separate entity; not specifically an event).
+    </ul>
+  <li>Press articles.
+  <li>News items.
+  <li>People.
+  <li>Offices.
+</ul>
+
+<h3>Attributes</h3>
+<h4>Domains:</h4>
+<h4>Groups:</h4>
+<ul>
+  <li>Type (community / business; but also "WGs, IGs, CGs, BGs, Coordination Groups, TAG, and AB").
+  <li>Title (string).
+  <li>Creation date (date).
+  <li>Number of participants (integer).
+  <li>Status (current / proposed / past).
+</ul>
+<h4>Organisations:</h4>
+<h4>Specs:</h4>
+<h4>People:</h4>
+
+<h2>Design of the API</h2>
+<p>What entities should be exposed and how; what parameters are accepted.</p>
+
+<p>See <a href="#Use_Cases">use cases</a>, <a href="#data">data</a> and <a href="#Daniel_Davis_URI_notes">Daniel Davis URI notes</a>.</p>
+
+<h2>Development of a prototype for search and filtering (web page)</h2>
+<p>There is <a href="https://www.w3.org/2014/08/bloodhound/">a very basic prototype</a> that hopefully will help in this discussion — to polish the API and to start using such API in real case scenarios.</p>
+
+<h3>Technical decisions</h3>
+<p>This particular prototype is being built using:</p>
+<ul>
+  <li><a href="http://foundation.zurb.com/index.html">Foundation</a> 5.3.3 for CSS boilerplate, basic styling, UI widgets, layout and responsive behaviour.
+  <li><a href="https://angularjs.org/">AngularJS</a> 1.2.22 as a general JS framework.
+  <li><a href="https://docs.angularjs.org/api/ngResource">The ngResource</a> module to handle a RESTful API returning JSON.
+</ul>
+
+<p>Assuming that we can configure them to ensure a minimum in terms of usability, performance and accessibility, this set of tools seem satisfactory for a future web page to search dynamically within W3C entities.</p>
+
+<p>The only change suggested is going for <a href="http://getbootstrap.com/">Bootstrap</a> 3.2.0 instead of Foundation — there seem to be more and more useful UI controls and states in the former, and it is widely used.</p>
+
+<h3>Features</h3>
+
+<p>This sections deals with some of the concerns raised by participant in this discussion recently. The goal is to use the prototype to check whether these are fair concerns that shou</p>
+<ul>
+  <li>Architecture and performance:
+    <ul>
+      <li><b>Relying on the user's device capabilities</b>: admissible?
+      <li><b>Increase in complexity</b>: admissible?
+    </ul>
+  <li>Usability:
+    <ul>
+      <li><b>Permanent URIs (lack of)</b>: the prototype is using the browser <a href="http://www.w3.org/TR/html5/browsers.html#history">history API</a> to save every new search term as a new URL. However, the previous states are not being recovered (yet) when the user goes back in history. That is WIP, but no issues are anticipated.
+      <li><b>In-page anchors</b>: for the moment, these are used to switch between different items for search (users, specs, groups, etc). The results now are a list of items, with one line for every item, with very little metadata. Given that the user will have to click one of those items (and navigate away) after searching, do we need fragment identifiers for every individual result?
+      <li><b>User confusion when a page has loaded but there's no content yet; delay between page having loaded</b> but content not yet loaded: the prototype is disabling user input and showing a message temporarily, while searching.
+      <li><b>It may not be stylable with the :target selector:</b> check pending.
+    </ul>
+  <li>Accessibility:
+    <ul>
+      <li><b>What about people who deactivate Javascript? What happens for them if we cannot provide server-side generated documents?</b>: would not those people be using our regular pages, search engines, etc instead — just as they do now?
+    </ul>
+</ul>
+
+<h2>References</h2>
+<ol>
+  <li id="ref1"><a href="http://www.w3.org/Consortium/siteindex#technologies">W3C Site Map</a>
+  <li id="ref2"><a href="http://www.w3.org/community">Community and Business Groups | A W3C Community Group</a>
+  <li id="ref3"><a href="http://www.w3.org/community/groups/">Current Groups | Community and Business Groups</a>
+  <li id="ref4"><a href="http://cgbeta.w3.org/community/">Community and Business Groups</a>
+  <li id="ref5"><a href="http://cgbeta.w3.org/community/groups/">Current Groups | Community and Business Groups</a>
+</ol>
+</section>
+</html>
