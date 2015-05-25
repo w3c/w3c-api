@@ -4,14 +4,14 @@
 <title>Data Platform Design</title>
 <h1>Data Platform Design</h1>
 <section>
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
   <p>This page originates from the discussion about a new "data-centric approach" to the W3C site. In particular, it is concerned with <b>a limited JSON API</b> that would be open to third parties, and <b>renovated (dynamic) features to search and filter</b> main nodes of information on the site.</p>
 </section>
 <section>
-<h2>Information architecture</h2>
+<h2 id="information_architecture">Information architecture</h2>
 <p>Main entities on our DB, relations among them, and their attributes <sup><a href="#ref1">[1]</a><a href="#ref2">[2]</a><a href="#ref3">[3]</a><a href="#ref4">[4]</a><a href="#ref5">[5]</a></sup>.</p>
 
-<h3>Hierarchy of entities</h3>
+<h3 id="hierarchy_of_entities">Hierarchy of entities</h3>
 <ul>
   <li>Domains.
     <ul>
@@ -45,7 +45,7 @@
   <li>Offices.
 </ul>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 <h4>Domains:</h4>
 <h4>Groups:</h4>
 <ul>
@@ -59,15 +59,15 @@
 <h4>Specs:</h4>
 <h4>People:</h4>
 
-<h2>Design of the API</h2>
+<h2 id="design_of_the_api">Design of the API</h2>
 <p>What entities should be exposed and how; what parameters are accepted.</p>
 
-<p>See <a href="#Use_Cases">use cases</a>, <a href="#data">data</a> and <a href="#Daniel_Davis_URI_notes">Daniel Davis URI notes</a>.</p>
+<p>See <a href="/w3c-api/data-platform.html#Use_Cases">use cases</a>, <a href="/w3c-api/data-platform.html#data">data</a> and <a href="/w3c-api/data-platform.html#Daniel_Davis_URI_notes">Daniel Davis URI notes</a>.</p>
 
-<h2>Development of a prototype for search and filtering (web page)</h2>
+<h2 id="prototype">Development of a prototype for search and filtering (web page)</h2>
 <p>There is <a href="https://www.w3.org/2014/08/bloodhound/">a very basic prototype</a> that hopefully will help in this discussion — to polish the API and to start using such API in real case scenarios.</p>
 
-<h3>Technical decisions</h3>
+<h3 id="technical_decisions">Technical decisions</h3>
 <p>This particular prototype is being built using:</p>
 <ul>
   <li><a href="http://foundation.zurb.com/index.html">Foundation</a> 5.3.3 for CSS boilerplate, basic styling, UI widgets, layout and responsive behaviour.
@@ -79,7 +79,7 @@
 
 <p>The only change suggested is going for <a href="http://getbootstrap.com/">Bootstrap</a> 3.2.0 instead of Foundation — there seem to be more and more useful UI controls and states in the former, and it is widely used.</p>
 
-<h3>Features</h3>
+<h3 id="features">Features</h3>
 
 <p>This sections deals with some of the concerns raised by participant in this discussion recently. The goal is to use the prototype to check whether these are fair concerns that shou</p>
 <ul>
@@ -101,7 +101,7 @@
     </ul>
 </ul>
 
-<h2>References</h2>
+<h2 id="references">References</h2>
 <ol>
   <li id="ref1"><a href="http://www.w3.org/Consortium/siteindex#technologies">W3C Site Map</a>
   <li id="ref2"><a href="http://www.w3.org/community">Community and Business Groups | A W3C Community Group</a>

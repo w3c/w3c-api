@@ -4,15 +4,16 @@
 <title>W3C Data Platform</title>
 <h1>W3C Data Platform</h1>
 <section>
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>This page is part of W3C project to use a data-centric approach to redesigning its site and services. If you have comments, please write to <a href="http://lists.w3.org/Archives/Public/site-comments/">site comments</a>. Note that this is a public archive of messages.</p>
 <p>For particulars about the design of the API, and the implementation of a prototype for search, see data platform design.</p>
 </section>
 <section>
-<h2>People</h2>
+
+<h2 id="people">People</h2>
 <p>Antonio, Denis, Jean-Gui, Ted, Ian, Daniel Davis</p>
 
-<h2>Scope</h2>
+<h2 id="scope">Scope</h2>
 <p>At the current time:</p>
 <ul>
   <li>Access to data about W3C specifications, groups, and events.
@@ -23,14 +24,14 @@
   <li>JSON representation of data
 </ul>
 
-<h2>Timeline</h2>
+<h2 id="timeline">Timeline</h2>
 <p>Depends on:</p>
 <ul>
   <li>Whether we can leverage some modules/extensions
   <li>Changes to CG site based on beta
 </ul>
 
-<h3>Rough estimate</h3>
+<h3 id="estimate">Rough estimate</h3>
 <p>Timeline:</p>
 <ul>
   <li>August, September 2014: Research into what we can use
@@ -39,14 +40,14 @@
   <li>February 2015: APIs available publicly
 </ul>
 
-<h2>Requirements</h2>
-<h3>Project Requirements</h3>
+<h2 id="requirements">Requirements</h2>
+<h3 id="project_requirements">Project Requirements</h3>
 <ul>
   <li>The APIs must be developed in public.
   <li>The APIs must be publicly documented.
 </ul>
 
-<h3>Design Requirements</h3>
+<h3 id="design_requirements">Design Requirements</h3>
 <ul>
   <li>Client-side functionality in key index pages:
     <ul>
@@ -78,7 +79,7 @@
     <li>How will we identify individual groups? Activities? Domains?
 </ul>
 
-<h3>Server Requirements</h3>
+<h3 id="server_requirements">Server Requirements</h3>
 
 <ul>
     <li>Our data servers must be extremely high performance (e.g., with strong caching in front).
@@ -97,14 +98,14 @@
     <li>Do we want to be our own CDN?
 </ul>
 
-<h3>Privacy requirements</h3>
+<h3 id="privacy_requirements">Privacy requirements</h3>
 
 <ul>
     <li>Will address when we get to individuals and members.
 </ul>
 
-<h2>Use Cases</h2>
-<h3>Specifications</h3>
+<h2 id="Use_Cases">Use Cases</h2>
+<h3 id="specifications">Specifications</h3>
 
 <ul>
     <li>A developer wants to write a new app based on our data and requires all the data about all specifications.
@@ -151,8 +152,8 @@
     <li>We are only planning limited query capabilities. For custom queries, use a series of individual queries.
 </ul>
 
-<h3>Groups</h3>
-  
+<h3 id="groups">Groups</h3>
+
 <ul>
     <li>A developer wants to write a new app based on our data and requires all the data about all groups.
     <ul>
@@ -181,20 +182,20 @@
     </ul>
 </ul>
 
-<h3>Individuals</h3>
+<h3 id="individuals">Individuals</h3>
 
 <ul>
     <li>Group participation
     <li>Roles (e.g., editor of which spec)
 </ul>
 
-<h3>Organizations</h3>
+<h3 id="organizations">Organizations</h3>
 
 <ul>
     <li>@@
 </ul>
 
-<h3>Events</h3>
+<h3 id="events">Events</h3>
 
 Note: "Event" here refers to anything with a date/time stamp. We plan to integrate meeting information, publication information, review end dates, etc. into a unified W3C calendar.
 
@@ -217,13 +218,13 @@ Note: "Event" here refers to anything with a date/time stamp. We plan to integra
     </ul>
 </ul>
 
-<h2>APIs</h2>
-<h3>Specifications</h3>
-<h3>Groups</h3>
-<h3>Events</h3>
+<h2 id="apis">APIs</h2>
+<h3 id="specs">Specifications</h3>
+<h3 id="groups">Groups</h3>
+<h3 id="events">Events</h3>
 
-<h2>Data</h2>
-<h3>Specifications</h3>
+<h2 id="data">Data</h2>
+<h3 id="specs_data">Specifications</h3>
 
 <ul>
     <li>@IJ likely to rewrite this as a table with different profiles, including "all" and "limited"
@@ -244,7 +245,7 @@ Note: "Event" here refers to anything with a date/time stamp. We plan to integra
 
 <h4>Full Public Specification Data</h4>
 
-<h3>Groups</h3>
+<h3 id="spec_groups">Groups</h3>
 <h4>Limited Group Data</h4>
 
 <ul>
@@ -259,7 +260,7 @@ Note: "Event" here refers to anything with a date/time stamp. We plan to integra
 <h4>Full Public Group Data</h4>
 <h4>Additional Member Data</h4>
 
-<h3>Events</h3>
+<h3 id="spec_events">Events</h3>
 <h4>Limited Event Data</h4>
 
 <ul>
@@ -275,44 +276,44 @@ Note: "Event" here refers to anything with a date/time stamp. We plan to integra
 <h4>Full Public Event Data</h4>
 <h4>Additional Member Data</h4>
 
-<h2>Notes on Performance</h2>
+<h2 id="performance">Notes on Performance</h2>
 
 <ul>
     <li>One idea is to create cached copies of data since it does not change that frequently. This can be server-side included (or accessed by URL).
 </ul>
 
-<h2>Notes on Pages without Javascript</h2>
+<h2 id="without_js">Notes on Pages without Javascript</h2>
 <ul>
     <li>When JS is turned off, we want to provide access to all the data, meaning we serve an HTML file. One technique for this is to use something like phantom.js to format the all.html page, which gets updated on a regular basis. This would allow us to reuse the same templates for "view some" as for "view all." PLH likes this approach but wants to be sure that this technique will be available in a decade.
 </ul>
 
-<h2>Feeds/Notifications</h2>
+<h2 id="feeds">Feeds/Notifications</h2>
 
 <ul>
     <li>Twitter?
     <li>Atom?
 </ul>
 
-<h2>Daniel Davis URI notes</h2>
+<h2 id="Daniel_Davis_URI_notes">Daniel Davis URI notes</h2>
 
 (Based on guidelines from "Web API Design" by Brian Mulloy, <a href="http://daniemon.com/blog/web-api-design-a-definitive-guide/">summarised here</a>.)
 
 The structure of API URLs would be:
-<blockquote>
+<pre>
 /collection/item
-</blockquote>
+</pre>
 
 To get all children within a parent resource, the resources would be listed hierarchically:
 
-<blockquote>
+<pre>
 /collection/item/sub-collection
-</blockquote>
+</pre>
 
 For filtering and queries beyond the base resources, we can use "?" parameters:
 
-<blockquote>
+<pre>
 /collection/item?filter=value
-</blockquote>
+</pre>
 
 This gives us a couple of benefits:
 
@@ -321,23 +322,23 @@ This gives us a couple of benefits:
     <li>Uses existing URL strings for specs, groups, etc.
 </ul>
 
-<h3>Examples</h3>
+<h3 id="examples">Examples</h3>
 
-<blockquote>
+<pre>
 /groups - data for all groups
 /groups/dpub - data for DigiPub group
 /domains/ink - data for INK domain
-</blockquote>
+</pre>
 
-<blockquote>
+<pre>
 /domains/ink/groups - data for all groups within INK domain
-</blockquote>
+</pre>
 
-<blockquote>
+<pre>
 /domains/ink/groups?type=ig - data for all IGs within the INK domain
 /specs/discovery-api - data for the Network Service Discovery API
 /groups/dap/specs?status=wd - data for all WD specs in DAP WG
-</blockquote>
+</pre>
 
 <h2>Discussion</h2>
 
