@@ -6,6 +6,8 @@ The goal of this project is provide a JSON API to access W3C data.
 
 The API is intended to be public and read-only.
 
+**Disclaimer: The API is currently unstable and is subject to change at any time without prior notice.**
+
 ## API documentation
 
 The API is documented at [https://api-test.w3.org/doc](https://api-test.w3.org/doc).
