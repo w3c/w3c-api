@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>W3C API Overview</title>
+<link rel="stylesheet" type="text/css" href="style/base.css" />
+<h1>W3C API Overview</h1>
+<section>
+<h2 id=introduction>Introduction</h2>
+<p>This page describes the resources forming the W3C API. If you have any problems or requests, please submit an <a href="https://github.com/w3c/w3c-api/issues">issue</a>.</p>
+</section>
+<section>
+<h2 id=schema>Schema</h2>
+<p>All API access is over HTTPS, and accessed from the <code>api-test.w3.org</code> domain. All data is sent and received as JSON.</p>
+<pre>
+$ curl -i https://api-test.w3.org/groups
+
+HTTP/1.1 200 OK
+Server: nginx/1.2.1
+Content-Type: application/json
+X-Powered-By: PHP/5.4.39-0+deb7u2
+Cache-Control: public, s-maxage=900
+Last-Modified: Fri, 29 May 2015 12:11:09 GMT
+Content-Length: 5638
+Accept-Ranges: bytes
+Date: Mon, 01 Jun 2015 12:51:18 GMT
+X-Varnish: 1381164767
+Age: 0
+Via: 1.1 varnish
+Vary: Origin, Authorization
+X-Cache: MISS
+
+{}
+</pre>
+
+<p>All timestamps are returned in ISO 8601 format:</p>
+<pre>
+YYYY-MM-DDTHH:MM:SSZ
+</pre>
+
+<h2 id=parameters>parameters</h2>
+<p>The W3C API takes optional parameters that can be passed as an HTTP query string parameter.</p>
+
+<p>List of parameters:</p>
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Value</td>
+      <td>Purpose</td>
+      <td>Example</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>embed<code></td>
+      <td>true/false</td>
+      <td>By default, resources will be represented by links. The <code>embed</code> parameter allows to embedded relatd resources rather than links to them (see the <a href="http://stateless.co/hal_specification.html">HAL model</a> for more details)</td>
+      <td>https://api-test.w3.org/groups?embed=true</td>
+    </tr>
+    <tr>
+      <td><code>_doc</code></td>
+      <td>1</td>
+      <td>Show the documentation for a specific resource</td>
+      <td>https://api-test.w3.org/groups?_doc=1</td>
+    </tr>
+    <tr>
+      <td><code>items</code></td>
+      <td>Integer</td>
+      <td>Specify how many items should be listed on a page. Default value: 50, max value: 100</td>
+      <td>https://api-test.w3.org/groups?items=10</td>
+    </tr>
+    <tr>
+      <td><code>page</code></td>
+      <td>Integer</td>
+      <td>Specify which page should be displayed, Default value: 1</td>
+      <td>https://api-test.w3.org/groups?page=2</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id=http_verbs>HTTP verbs</h2>
+<p>For now, the W3C API is read-only. Therefore the only HTTP verb we support is <code>GET</code>.</p>
+
+<h2 id=pagination>Pagination</h2>
+<p>As mentioned in the <a href="#parameters">parameters section</a>, requests that return multiple items will be paginated to 50 items by default. You can specify further pages with the <code>?page</code> parameter. For some resources, you can also set a custom page size up to 100 with the <code>?items</code> parameter.</p>
+
+<p>Note that page numbering is 1-based and that omitting the <code>?page</code> parameter will return the first page.</p>
+
+<h2 id=rate_limiting>Rate limiting</h2>
+<p>For requests using the API key, you can make up to 5,000 requests per hour. For unauthenticated requests, the rate limit allows you to make up to 60 requests per hour. Unauthenticated requests are associated with your IP address, and not the user making requests.</p>
+
+<h2 id=cors>Cross Origin Resource Sharing</h2>
+<p>The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the <a href="http://www.w3.org/TR/cors">CORS W3C Recommendation</a>.</p>
+
+<p>Here’s a sample request sent from a browser hitting <code>http://example.com</code>:</p>
+<pre>
+$ curl -i https://api-test.w3.org -H "Origin: http://example.com"
+
+HTTP/1.1 200 OK
+Server: nginx/1.2.1
+Content-Type: application/json
+Access-Control-Allow-Origin: http://example.com
+Access-Control-Allow-Credentials: true
+</pre>
+
+</section>
+</html>
