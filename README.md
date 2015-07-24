@@ -12,6 +12,13 @@ The API is intended to be public and read-only.
 
 The API is documented at [https://api-test.w3.org/doc](https://api-test.w3.org/doc).
 
+## JavaScript clients
+
+For a collection of small JS libraries or utilities that leverage the W3C API, see [Apiary](https://github.com/w3c/apiary).
+
+Those JS modules are intended to be used from W3C pages: domain pages, group pages, personal pages, etc.
+Examples of use are also provided.
+
 ## Feedback and contributions
 
 The code of this API is not public because it is highly tied to the W3C database infrastructure and would expose sensitive information. However, we welcome feedback and strongly encourage people to submit issues [here](https://github.com/w3c/w3c-api/issues).
