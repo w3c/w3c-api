@@ -12,12 +12,14 @@ The API is intended to be public and read-only.
 
 The API is documented at [https://api-test.w3.org/doc](https://api-test.w3.org/doc).
 
-## JavaScript clients
+## JavaScript library
 
-For a collection of small JS libraries or utilities that leverage the W3C API, see [Apiary](https://github.com/w3c/apiary).
+[Apiary](https://github.com/w3c/apiary) is a simple JavaScript library to leverage the W3C API.
+This library is intended to be used from W3C pages: domain pages, group pages, personal pages, etc.
+With Apiary, you can inject data that is retrieved using the W3C API, in a declarative way using *placeholders*.
 
-Those JS modules are intended to be used from W3C pages: domain pages, group pages, personal pages, etc.
-Examples of use are also provided.
+See [the GitHub project](https://github.com/w3c/apiary) for more information.
+Examples are also provided.
 
 ## Feedback and contributions
 
