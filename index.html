@@ -76,12 +76,7 @@ YYYY-MM-DDTHH:MM:SSZ
     <li>403 Invalid API key</li>
 </ul>
 
-<h3 id="restrictions">API Key restrictions</h3>
-
-<p>
-    By default, each key can make up to 500 requests per hour. <a href="mailto:sysreq@w3.org">W3C Systems team</a>
-    can increase that limit.
-</p>
+<h3 id="restrictions">Restricting API Keys</h3>
 
 <p>
     If API keys are going to be publicly visible (for example in some client-side Javascript code), it is highly
@@ -94,6 +89,19 @@ YYYY-MM-DDTHH:MM:SSZ
     header</a>)
     matches one of this key's domains.
 </p>
+
+<h3>Rate limiting</h3>
+
+<p>
+    By default, each key can make up to 500 requests per hour. <a href="mailto:sysreq@w3.org">W3C Systems team</a>
+    can increase that limit.
+</p>
+<p>
+    You can check the status of a key in response headers after any request:
+</p>
+<pre>X-RateLimit-Limit: 500
+X-RateLimit-Remaining: 452
+X-RateLimit-Reset: 1439472737</pre>
 
 <h2 id=parameters>parameters</h2>
 <p>The W3C API takes optional parameters that can be passed as an HTTP query string parameter.</p>
@@ -143,9 +151,6 @@ YYYY-MM-DDTHH:MM:SSZ
 <p>As mentioned in the <a href="#parameters">parameters section</a>, requests that return multiple items will be paginated to 50 items by default. You can specify further pages with the <code>?page</code> parameter. For some resources, you can also set a custom page size up to 100 with the <code>?items</code> parameter.</p>
 
 <p>Note that page numbering is 1-based and that omitting the <code>?page</code> parameter will return the first page.</p>
-
-<h2 id=rate_limiting>Rate limiting</h2>
-<p>For requests using the API key, you can make up to 5,000 requests per hour. For unauthenticated requests, the rate limit allows you to make up to 60 requests per hour. Unauthenticated requests are associated with your IP address, and not the user making requests.</p>
 
 <h2 id=cors>Cross Origin Resource Sharing</h2>
 <p>The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the <a href="http://www.w3.org/TR/cors">CORS W3C Recommendation</a>.</p>
