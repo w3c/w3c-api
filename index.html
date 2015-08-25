@@ -57,6 +57,23 @@ YYYY-MM-DDTHH:MM:SSZ
     requests to the API</a> (more about this below).
 </p>
 
+<h3 id="restrictions">Restricting API Keys</h3>
+
+<p>
+   If API keys are going to be publicly visible (for example in some client-side Javascript code), it is <strong>highly
+  recommended</strong> to specify allowed domains when creating or editing them.
+</p>
+
+<p>
+Requests made with such keys will then be authorized <strong>only</strong> if the origin domain (using
+    <a href="https://www.w3.org/TR/cors/">CORS</a> <a href="https://www.w3.org/TR/cors/#origin-request-header">Origin
+    header</a>)
+  matches one of this key's domains.</p>
+
+  <p>If the key is not associated with a domain, the <code>Origin</code> header is not mandatory.
+</p>
+
+
 <h3 id="use">Use an API Key</h3>
 
 <p>
@@ -75,20 +92,6 @@ YYYY-MM-DDTHH:MM:SSZ
     <li>401 Missing API key</li>
     <li>403 Invalid API key</li>
 </ul>
-
-<h3 id="restrictions">Restricting API Keys</h3>
-
-<p>
-    If API keys are going to be publicly visible (for example in some client-side Javascript code), it is highly
-    recommended to specify allowed domains when creating or editing them.
-</p>
-
-<p>
-    Requests made with such keys will then be authorized only if the origin domain (using
-    <a href="https://www.w3.org/TR/cors/">CORS</a> <a href="https://www.w3.org/TR/cors/#origin-request-header">Origin
-    header</a>)
-    matches one of this key's domains.
-</p>
 
 <h3>Rate limiting</h3>
 
