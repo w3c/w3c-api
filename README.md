@@ -10,7 +10,7 @@ The API is intended to be public and read-only.
 
 ## API documentation
 
-The API is documented at [https://api-test.w3.org/doc](https://api-test.w3.org/doc).
+The API is documented at [https://w3c.github.io/w3c-api/](https://w3c.github.io/w3c-api/) and the details about the different routes are available at [https://api-test.w3.org/doc](https://api-test.w3.org/doc)
 
 ## JavaScript library
 
