@@ -1,16 +1,14 @@
-# W3C Web API
+# W3C API
 
-!!!!**This repository is not yet public as we are working on it but will be made public shortly.**!!!!
+**Disclaimer: The W3C API is currently under development and is not yet stable. It is subject to change at any time without prior notice. Use it at your own risk.**
 
 The goal of this project is provide a JSON API to access W3C data.
 
-The API is intended to be public and read-only.
-
-**Disclaimer: The API is currently under development and is not yet stable. It is subject to change at any time without prior notice. Use it at your own risk.**
+The W3C API is intended to be public and read-only.
 
 ## API documentation
 
-The API is documented at [https://w3c.github.io/w3c-api/](https://w3c.github.io/w3c-api/) and the details about the different routes are available at [https://api-test.w3.org/doc](https://api-test.w3.org/doc)
+The W3C API is documented at [https://w3c.github.io/w3c-api/](https://w3c.github.io/w3c-api/) and the details about the different routes are available at [https://api-test.w3.org/doc](https://api-test.w3.org/doc)
 
 ## JavaScript library
 
