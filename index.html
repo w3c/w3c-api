@@ -142,7 +142,7 @@ X-RateLimit-Reset: 1439472737</pre>
     <tr>
       <td><code>items</code></td>
       <td>Integer</td>
-      <td>Specify how many items should be listed on a page. Default value: 50, max value: 100</td>
+      <td>Specify how many items should be listed on a page. Default value: 100, max value: 1000</td>
       <td>https://api-test.w3.org/groups?items=10</td>
     </tr>
     <tr>
@@ -158,7 +158,7 @@ X-RateLimit-Reset: 1439472737</pre>
 <p>For now, the W3C API is read-only. Therefore the only HTTP verb we support is <code>GET</code>.</p>
 
 <h2 id=pagination>Pagination</h2>
-<p>As mentioned in the <a href="#parameters">parameters section</a>, requests that return multiple items will be paginated to 50 items by default. You can specify further pages with the <code>?page</code> parameter. For some resources, you can also set a custom page size up to 100 with the <code>?items</code> parameter.</p>
+<p>As mentioned in the <a href="#parameters">parameters section</a>, requests that return multiple items will be paginated to 100 items by default. You can specify further pages with the <code>?page</code> parameter. For some resources, you can also set a custom page size up to 1000 with the <code>?items</code> parameter.</p>
 
 <p>Note that page numbering is 1-based and that omitting the <code>?page</code> parameter will return the first page.</p>
 
