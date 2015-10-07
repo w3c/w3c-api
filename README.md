@@ -10,7 +10,7 @@ The W3C API is intended to be public and read-only.
 
 The W3C API is documented at [https://w3c.github.io/w3c-api/](https://w3c.github.io/w3c-api/) and the details about the different endpoints are available at [https://api-test.w3.org/doc](https://api-test.w3.org/doc)
 
-## JavaScript library
+## Libraries
 
 [Apiary](https://github.com/w3c/apiary) is a simple JavaScript library to leverage the W3C API.
 This library is intended to be used from W3C pages: domain pages, group pages, personal pages, etc.
@@ -18,6 +18,8 @@ With Apiary, you can inject data that is retrieved using the W3C API, in a decla
 
 See [the GitHub project](https://github.com/w3c/apiary) for more information.
 Examples are also provided.
+
+For using the W3C API with other langgages see the [list of libraries for working with JSON HAL](https://github.com/mikekelly/hal_specification/wiki/Libraries).
 
 ## Feedback and contributions
 
