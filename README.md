@@ -19,7 +19,7 @@ With Apiary, you can inject data that is retrieved using the W3C API, in a decla
 See [the GitHub project](https://github.com/w3c/apiary) for more information.
 Examples are also provided.
 
-For using the W3C API with other langgages see the [list of libraries for working with JSON HAL](https://github.com/mikekelly/hal_specification/wiki/Libraries).
+For using the W3C API with other languages see the [list of libraries for working with JSON HAL](https://github.com/mikekelly/hal_specification/wiki/Libraries).
 
 ## Feedback and contributions
 
