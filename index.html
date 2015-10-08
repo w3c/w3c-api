@@ -99,14 +99,14 @@ Requests made with such keys will then be authorized <strong>only</strong> if th
 <h3>Rate limiting</h3>
 
 <p>
-    By default, each key can make up to 500 requests per hour. <a href="mailto:sysreq@w3.org">W3C Systems team</a>
+    By default, each key can make up to 5000 requests per hour. <a href="mailto:sysreq@w3.org">W3C Systems team</a>
     can increase that limit.
 </p>
 <p>
     You can check the status of a key in response headers after any request:
 </p>
-<pre>X-RateLimit-Limit: 500
-X-RateLimit-Remaining: 452
+<pre>X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4524
 X-RateLimit-Reset: 1439472737</pre>
 
 <p>
