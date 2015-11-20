@@ -16,8 +16,7 @@ The W3C API is documented at [https://w3c.github.io/w3c-api/](https://w3c.github
 This library is intended to be used from W3C pages: domain pages, group pages, personal pages, etc.
 With Apiary, you can inject data that is retrieved using the W3C API, in a declarative way using *placeholders*.
 
-See [the GitHub project](https://github.com/w3c/apiary) for more information.
-Examples are also provided.
+[node-w3capi](https://github.com/w3c/node-w3capi) provides a client for the W3C API, which exposes information about things such as specifications, groups, users, etc. It follows a simple pattern in which one builds up a query, and then causes the data to be fetched.
 
 For using the W3C API with other languages see the [list of libraries for working with JSON HAL](https://github.com/mikekelly/hal_specification/wiki/Libraries).
 
