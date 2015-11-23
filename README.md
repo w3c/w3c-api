@@ -1,14 +1,14 @@
 # W3C API
 
-**Disclaimer: The W3C API is currently under development and is not yet stable. It is subject to change at any time without prior notice. Use it at your own risk.**
+In response to demand from developers in our community wanting to interact with [W3C](http://www.w3.org/)'s data, the W3C Systems Team has developed a Web API. Through it we are making available data on Specifications, Groups, Organizations and Users.
 
-The goal of this project is to provide a JSON API to access W3C data.
+We will be expanding what information we expose over time.
 
-The W3C API is intended to be public and read-only.
+The W3C API is a read-only Web API based on the JSON format exposing only public data.
 
-## API documentation
+## Documentation
 
-The W3C API is documented at [https://w3c.github.io/w3c-api/](https://w3c.github.io/w3c-api/) and the details about the different endpoints are available at [https://api-test.w3.org/doc](https://api-test.w3.org/doc)
+The W3C API is documented at [https://w3c.github.io/w3c-api/](https://w3c.github.io/w3c-api/) and the details about the different endpoints are available at [https://api.w3.org/doc](https://api.w3.org/doc)
 
 ## Libraries
 
