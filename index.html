@@ -14,28 +14,22 @@
 </section>
 <section>
 <h2 id=schema>Schema</h2>
-<p>All API access is over HTTPS, and accessed from the <code>api-test.w3.org</code> domain. All data is sent and received as JSON.</p>
+<p>All API access is over HTTPS, and accessed from the <code>api.w3.org</code> domain. All data is sent and received as JSON.</p>
 
-<p>The details about the different API endpoints are documented at <a href="https://api-test.w3.org/doc">https://api-test.w3.org/doc</a>.</p>
+<p>The details about the different API endpoints are documented at <a href="https://api.w3.org/doc">https://api.w3.org/doc</a>.</p>
 
 <pre>
-$ curl -i https://api-test.w3.org/groups?apikey=xxx
-
+$ curl -i https://api.w3.org/groups?apikey=xxx
 HTTP/1.1 200 OK
-Server: nginx/1.2.1
 Content-Type: application/json
-X-Powered-By: PHP/5.4.39-0+deb7u2
 Cache-Control: public, s-maxage=900
-Last-Modified: Fri, 29 May 2015 12:11:09 GMT
-Content-Length: 5638
+Date: Mon, 23 Nov 2015 12:10:43 GMT
+Last-Modified: Wed, 18 Nov 2015 22:39:10 GMT
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 998
+X-RateLimit-Reset: 1448284222
+Transfer-Encoding: chunked
 Accept-Ranges: bytes
-Date: Mon, 01 Jun 2015 12:51:18 GMT
-X-Varnish: 1381164767
-Age: 0
-Via: 1.1 varnish
-Vary: Origin, Authorization
-X-Cache: MISS
-
 {...}
 </pre>
 
@@ -84,7 +78,7 @@ Requests made with such keys will then be authorized <strong>only</strong> if th
     that:
 </p>
 <ul>
-    <li>Using the <code>apikey</code> query parameter: <code>https://api-test.w3.org/groups?apikey=mgug2t7fylcksswc4gcs08s4gooo0ok</code>
+    <li>Using the <code>apikey</code> query parameter: <code>https://api.w3.org/groups?apikey=mgug2t7fylcksswc4gcs08s4gooo0ok</code>
     </li>
     <li>Using the HTTP Authorization header: <code>Authorization: W3C-API
         apikey="mgug2t7fylcksswc4gcs08s4gooo0ok"</code></li>
@@ -131,25 +125,25 @@ X-RateLimit-Reset: 1439472737</pre>
       <td><code>embed</code></td>
       <td>boolean</td>
       <td>By default, resources will be represented by links. On specific routes, the <code>embed</code> parameter allows to additionnaly embed related resources (see the <a href="http://stateless.co/hal_specification.html">HAL model</a> for more details)</td>
-      <td>https://api-test.w3.org/groups?embed=1</td>
+      <td>https://api.w3.org/groups?embed=1</td>
     </tr>
     <tr>
       <td><code>_doc</code></td>
       <td>1</td>
       <td>Show the documentation for a specific endpoint</td>
-      <td>https://api-test.w3.org/groups?_doc=1</td>
+      <td>https://api.w3.org/groups?_doc=1</td>
     </tr>
     <tr>
       <td><code>items</code></td>
       <td>Integer</td>
       <td>Specify how many items should be listed on a page. Default value: 100, max value: 1000</td>
-      <td>https://api-test.w3.org/groups?items=10</td>
+      <td>https://api.w3.org/groups?items=10</td>
     </tr>
     <tr>
       <td><code>page</code></td>
       <td>Integer</td>
       <td>Specify which page should be displayed, Default value: 1</td>
-      <td>https://api-test.w3.org/groups?page=2</td>
+      <td>https://api.w3.org/groups?page=2</td>
     </tr>
   </tbody>
 </table>
@@ -167,7 +161,7 @@ X-RateLimit-Reset: 1439472737</pre>
 
 <p>Here’s a sample request sent from a browser hitting <code>http://example.com</code>:</p>
 <pre>
-$ curl -i https://api-test.w3.org -H "Origin: http://example.com"
+$ curl -i https://api.w3.org -H "Origin: http://example.com"
 
 HTTP/1.1 200 OK
 Server: nginx/1.2.1
