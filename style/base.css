@@ -75,6 +75,6 @@ ul.toc, ol.toc {
  dt { pause-before: 63ms; }
 }
 
-table {
+table, td {
     border: 1px solid #005A9C;
 }
