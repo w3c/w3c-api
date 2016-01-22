@@ -8,7 +8,9 @@ The W3C API is a read-only Web API based on the JSON format exposing only public
 
 ## Documentation
 
-The W3C API is documented at [https://w3c.github.io/w3c-api/](https://w3c.github.io/w3c-api/) and the details about the different endpoints are available at [https://api.w3.org/doc](https://api.w3.org/doc)
+The W3C API is documented at [https://w3c.github.io/w3c-api/](https://w3c.github.io/w3c-api/) and the details about the different endpoints are available at [https://api.w3.org/doc](https://api.w3.org/doc).
+
+Webhooks are documented at [https://w3c.github.io/w3c-api/webhooks](https://w3c.github.io/w3c-api/webhooks).
 
 ## Libraries
 
