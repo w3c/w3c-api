@@ -80,6 +80,9 @@ table {
     border-spacing: 0px;
 }
 
-td {
+td, th {
     border: 1px solid #005A9C;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
 }
