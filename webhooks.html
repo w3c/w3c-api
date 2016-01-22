@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Webhooks</title>
+<link rel="stylesheet" type="text/css" href="style/base.css"/>
+<h1>Webhooks</h1>
+
+<section>
+    <p>
+        Webhooks allow you to subscribe to certain events happening at W3C. When one of these events is triggered, we'll
+        send a HTTP POST payload to the webhook's configured URL.
+    </p>
+</section>
+
+<section>
+    <h2>Events</h2>
+
+    <p>
+        When configuring a webhook, you can choose which event you would like to receive payloads for. You can change
+        the subscribed events through the
+        UI anytime.
+    </p>
+    <p>
+        Each event corresponds to a certain set of actions that can happen. For
+        example, if you subscribe to the publication event you'll receive detailed payloads every time an a technical
+        report
+        is published.
+    </p>
+
+    <p>The available events are:</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Publication (tr.published, tr.updated)</td>
+            <td>Any time a technical report is published or its metadata are updated</td>
+        </tr>
+    </table>
+    <p>This list of events will be progressively augmented.</p>
+</section>
+
+<section>
+    <h2>Headers and Payloads</h2>
+
+    <p>HTTP requests made to your webhook's configured URL endpoint will contain several special headers:</p>
+    <table>
+        <tr>
+            <th>Header</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>X-W3C-Webhook</td>
+            <td>Link to the webhook that triggered the delivery</td>
+        </tr>
+        <tr>
+            <td>X-W3C-Webhook-Id</td>
+            <td>ID of the webhook that triggered the delivery</td>
+        </tr>
+    </table>
+
+    <p>
+        Payload of HTTP requests consists in a JSON fragment including the event that triggered the webhook and one or
+        several
+        objects serialized in the same way as the <a href="https://api.w3.org/doc">API</a>.
+    </p>
+
+    <h3>Example delivery</h3>
+    <code>
+URL: http://example.org/my-webhook
+Host: example.org
+X-W3C-Webhook: https://www.w3.org/users/39441/webhooks/1
+X-W3C-Webhook-Id: 1
+    </code>
+    <code>
+{
+    "event": "tr.published",
+    "specVersion": {
+        "status": "Working Draft",
+        "uri": "http:\/\/www.w3.org\/TR\/2016\/WD-preload-20160120\/",
+        "date": "2016-01-20",
+        "informative": false,
+        "title": "Preload",
+        "shortlink": "http:\/\/www.w3.org\/TR\/preload\/",
+        "editor_draft": "http:\/\/w3c.github.io\/preload\/",
+        "process_rules": "http:\/\/www.w3.org\/2015\/Process-20150901\/",
+        "_links": {
+            "self": {
+                "href": "https:\/\/api.w3.org\/specifications\/preload\/versions\/20160120"
+            },
+            "editors": {
+                "href": "https:\/\/api.w3.org\/specifications\/preload\/versions\/20160120\/editors"
+            },
+            "deliverers": {
+                "href": "https:\/\/api.w3.org\/specifications\/preload\/versions\/20160120\/deliverers"
+            },
+            "specification": {
+                "href": "https:\/\/api.w3.org\/specifications\/preload"
+            },
+            "predecessor-version": {
+                "href": "https:\/\/api.w3.org\/specifications\/preload\/versions\/20160120\/predecessors"
+            }
+        }
+    }
+}
+    </code>
+</section>
+
+</html>
