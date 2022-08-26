@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<title>Webhooks</title>
-<link rel="stylesheet" type="text/css" href="style/base.css"/>
-<h1>Webhooks</h1>
+<head>
+    <meta charset="utf-8">
+    <title>Webhooks</title>
+    <link rel="stylesheet" type="text/css" href="style/base.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet"/>
+</head>
+<body>
+<h1 id="webhooks">Webhooks</h1>
 
 <section>
     <p>
@@ -15,7 +19,7 @@
     </p>
 </section>
 
-<section>
+<section id="events">
     <h2>Events</h2>
 
     <p>
@@ -45,13 +49,15 @@
         </tr>
         <tr>
             <td>Connected Accounts (connected_account.created, connected_account.deleted)</td>
-            <td>Any time someone connects their W3C account to an external service such as GitHub, or removes such a connection</td>
+            <td>Any time someone connects their W3C account to an external service such as GitHub, or removes such a
+                connection
+            </td>
         </tr>
     </table>
     <p>This list of events will be progressively augmented.</p>
 </section>
 
-<section>
+<section id="headers-payloads">
     <h2>Headers and Payloads</h2>
 
     <p>HTTP requests made to your webhook's configured URL endpoint will contain several special headers:</p>
@@ -68,24 +74,29 @@
             <td>X-W3C-Webhook-Id</td>
             <td>ID of the webhook that triggered the delivery</td>
         </tr>
+        <tr>
+            <td>X-W3C-Webhook-Signature-256</td>
+            <td>
+                Signature of the payload, if a secret token was set.
+                <a href="#securing">See below for more information</a>
+            </td>
+        </tr>
     </table>
 
     <p>
-        Payload of HTTP requests consists in a JSON fragment including the event that triggered the webhook and one or
-        several
-        objects serialized in the same way as the <a href="https://api.w3.org/doc">API</a>.
+        Payload of HTTP requests consists in a JSON fragment including the event that triggered the webhook, the exact
+        time when the request was made,
+        and one or several objects serialized in the same way as the <a href="https://api.w3.org/doc">API</a>.
     </p>
 
     <h3>Example delivery</h3>
-    <pre>
-URL: http://example.org/my-webhook
+    <pre><code class="language-http">URL: http://example.org/my-webhook
 Host: example.org
 X-W3C-Webhook: https://www.w3.org/users/12345/webhooks/1
-X-W3C-Webhook-Id: 1
-    </pre>
-    <pre>
-{
+X-W3C-Webhook-Id: 1</code></pre>
+    <pre><code class="language-json">{
     "event": "tr.published",
+    "microtime": 1661495980.622211,
     "specVersion": {
         "status": "Working Draft",
         "uri": "http:\/\/www.w3.org\/TR\/2016\/WD-preload-20160120\/",
@@ -113,8 +124,67 @@ X-W3C-Webhook-Id: 1
             }
         }
     }
-}
-    </pre>
+}</code></pre>
 </section>
 
+<section id="securing">
+    <h2>Securing your webhooks</h2>
+    <p>
+        For security reasons, you probably want to limit requests to those coming from W3C. To do so you can set up a
+        secret token and validate the information received.
+    </p>
+
+    <h3>Setting your secret token</h3>
+    <p>
+        When creating or editing a webhook, you can fill out the Secret textbox. You should use a random key with high
+        entropy, for example by taking the output of <code>LC_ALL=C tr -dc '[:alnum:]' < /dev/urandom | head -c20</code>
+        from the terminal (on a GNU/Linux system).
+    </p>
+
+    <p>
+        Beware that once set, you won't be able to see this secret anymore. If you forget it, you will have to change
+        it,
+        which can be done when editing a webhook.
+    </p>
+
+    <h3>Validating payloads</h3>
+    <p>
+        When your secret token is set, W3C uses it to create a hash signature with each payload. This hash signature is
+        included with the headers of each request as <code>X-W3C-Webhook-Signature-256</code>.
+    </p>
+    <p>
+        To verify that this signature is correct, and thus that it indeed came from W3C, you need to compute hash using
+        an HMAC hex digest, with the SHA-256 algorithm, and then compare this hash with the signature.
+    </p>
+    <p>
+        Here is a sample PHP code exhibiting how to verify the signature:
+    </p>
+    <pre><code class="language-php">&lt;?php
+$body = file_get_contents('php://input');
+$secret = $_ENV['SECRET_TOKEN'];
+$signature = hash_hmac('sha256', $body, $secret);
+if (hash_equals($signature, $_SERVER['HTTP_X_W3C_WEBHOOK_SIGNATURE_256'])) {
+   echo 'ok';
+} else {
+  http_response_code(403);
+}</code></pre>
+    <p>
+        Your language and server implementations may differ from this example code. However, there are a few important
+        things to point out:
+    </p>
+    <ul>
+        <li>
+            Never hardcode the secret token into your app! Use environment variables or other secure means to expose the
+            token to your app.
+        </li>
+        <li>
+            Avoid using <code>==</code> to compare the signature with the computed hash. Instead, use a method like
+            <code>hash_equals</code> to perform a timing attack safe string comparison.
+        </li>
+    </ul>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
 </html>
