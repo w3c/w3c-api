@@ -149,8 +149,9 @@ X-W3C-Webhook-Id: 1</code></pre>
 
     <h3>Validating payloads</h3>
     <p>
-        When your secret token is set, W3C uses it to create a hash signature with each payload. This hash signature is
-        included with the headers of each request as <code>X-W3C-Webhook-Signature-256</code>.
+        When your secret token is set, W3C uses it to create a hash signature with each payload. This hexadecimal
+        hash signature is included with the headers of each request as <code>X-W3C-Webhook-Signature-256</code>.
+        We also send a Base 64 version of the signature as <code>X-W3C-Webhook-Signature-256-Base64</code>.
     </p>
     <p>
         To verify that this signature is correct, and thus that it indeed came from W3C, you need to compute hash using
