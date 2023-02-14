@@ -1,739 +1,441 @@
-<!DOCTYPE html>
-<html>
-<meta charset="utf-8">
-<title>W3C Data Platform</title>
-<link rel="stylesheet" type="text/css" href="style/base.css" />
-<h1>W3C Data Platform</h1>
-<section>
-<h2 id="introduction">Introduction</h2>
-<p>This page is part of W3C project to use a data-centric approach to redesigning its site and services. If you have comments, please write to <a href="http://lists.w3.org/Archives/Public/site-comments/">site comments</a>. Note that this is a public archive of messages.</p>
-<p>For particulars about the design of the API, and the implementation of a prototype for search, see data platform design.</p>
-</section>
-<section>
+<div id="globalContainer"><a name="globalContainer"></a>
 
-<h2 id="people">People</h2>
-<p>Antonio, Denis, Jean-Gui, Ted, Ian, Daniel Davis</p>
+<div id="serviceNavigation">
+ 
+ <ul>
+  
+  <li class="access"><a href="#contentContainer">Zum Inhalt springen</a></li>
+  <li class="access"><a href="#globalNavigation">Zur Navigation springen</a></li>
+  <li class="logout"><a href="../logout/goto.do" accesskey="9">Kunden-<span xml:lang="en" lang="en">Logout</span></a></li>
+  <li class="access"><a href="#" accesskey="0">Zur <span xml:lang="en" lang="en">Accesskeys</span>-Übersicht</a></li>
+ </ul>
+</div> <!-- End of serviceNavigation -->
+
+<div id="headerContainer">
+
+ <div id="lastLogin"><p><strong>Datum Ihres letzten Logins</strong><br>
+	 
+	  13. Februar 2023, 22:18
+	  Uhr</p>
+ </div>
+ 
+ <p id="logoContainer"><img src="../Assets/PBC/images/logo.gif" width="267" height="76" alt="Logo Deutsche Bank AG" title="Logo Deutsche Bank AG"></p>
+</div> <!-- End of headerContainer -->
+
+<div id="locationContainer">
+ <p id="customerNumber"><strong>Kundennummer:</strong>&nbsp;114&nbsp;1234567</p> <!-- End of customerNumber -->
+ <div id="globalNavigation"><a name="globalNavigation"></a>
+  <h4 class="access">Hauptnavigation</h4>
+  <ul>
+   <li><a href="/pbc/trxmdemokonto/overview/goto.do" accesskey="1">Übersicht</a></li><li class="currentPage"><strong><a href="/pbc/trxmdemokonto/account/goto.do" accesskey="2" id="Banking">Konten</a></strong></li><li><a href="/pbc/trxmdemokonto/plannerOverview/goto.do" accesskey="3" id="Pfm">Planer</a></li><li class="finanzCheck hidden"><a href="/pbc/trxmdemokonto/finanzCheck/goto.do" accesskey="4" id="finanzCheckTab">FinanzCheck</a></li><li><a href="/pbc/trxmdemokonto/depot/goto.do" accesskey="5" id="Brokerage">Depots</a></li><li><a href="/pbc/trxmdemokonto/robin/goto.do" accesskey="6" target="_blank">ROBIN</a></li><li><a href="/pbc/trxmdemokonto/markets/goto.do" accesskey="7" id="Market">Märkte</a></li><li><a href="/pbc/trxmdemokonto/zinsMarkt/goto.do" accesskey="8">ZinsMarkt</a></li><li><a href="/pbc/trxmdemokonto/productshop/goto.do" accesskey="9" id="Product">Produkte</a></li><li><a href="/pbc/trxmdemokonto/serviceoptions/goto.do" accesskey="10" id="Services">Services</a></li><li class="esafe hidden"><a href="/pbc/trxmdemokonto/esafe/goto.do" accesskey="11" id="esafeTab">eSafe<span id="esafeCounterContainer"></span></a></li><li id="postboxTab"><a href="/pbc/trxmdemokonto/postboxOverview/goto.do" accesskey="12" id="postboxTab">Postfach<span title="Sie haben 4 ungelesene Nachrichten." class="messageboxCounterContainer"><span id="messageboxCounterLeft"></span><span id="messageboxCounterRight"></span><b class="messageboxCounterId">4</b></span></a></li>
+  </ul>
+ </div> <!-- End of globalNavigation -->
+</div> <!-- End of locationContainer -->
+
+<div id="folderContainer">
+
+<div id="topicContainer">
+
+
+ <div id="localNavigation">
+  <h4 class="access">Untermenü zum aktuellen Standort "Konten"</h4>
+  <ul><li class="visualAid"><a href="/pbc/trxmdemokonto/volume/goto.do">Umsatzanzeige</a></li><li><a href="/pbc/trxmdemokonto/mbatransactions/goto.do">MultiBanking Umsätze</a></li><li class="visualAid"><a href="/pbc/trxmdemokonto/instantpayment/goto.do">Echtzeit-Überweisung</a></li><li><a href="/pbc/trxmdemokonto/dbtransfer/goto.do">Inlands-Überweisung</a></li><li class="currentPage"><a href="/pbc/trxmdemokonto/fbtransfer/goto.do"><strong>Auslands-Überweisung</strong></a></li><li><a href="/pbc/trxmdemokonto/datetransfer/goto.do">Termin-Überweisungen</a></li><li><a href="/pbc/trxmdemokonto/satransfer/goto.do">Überweisung auf Unterkonto</a></li><li><a href="/pbc/trxmdemokonto/templates/goto.do">Überweisungsvorlagen</a></li><li><a href="/pbc/trxmdemokonto/bankorder/goto.do">Daueraufträge</a></li><li class="visualAid"><a href="/pbc/trxmdemokonto/thirdPartyProviders/goto.do">Banking über Drittanbieter</a></li><li><a href="/pbc/trxmdemokonto/paydirektOverview/goto.do">paydirekt</a></li><li class="visualAid"><a href="/pbc/trxmdemokonto/volumeAccountProperties/goto.do">IBAN und BIC anzeigen</a></li><li class="visualAid"><a href="/pbc/trxmdemokonto/sepadebit/goto.do">SEPA-Lastschrift</a></li><li><a href="/pbc/trxmdemokonto/datedebit/goto.do">Termin-Lastschriften</a></li><li><a href="/pbc/trxmdemokonto/debittemplates/goto.do">Lastschrift-Vorlagen</a></li><li class="visualAid"><a href="/pbc/trxmdemokonto/accountReferenceaccount/goto.do">Referenzkonto</a></li></ul>
+ </div> <!-- End of localNavigation -->
+
+     
+      
+     
+
+ <div class="logout">
+  <p><a href="../logout/goto.do" accesskey="9">Kunden-<span xml:lang="en" lang="en">Logout</span></a></p>
+ </div>
+
+</div> <!-- End of topicContainer -->
+
+<div id="contentContainer"><a name="contentContainer"></a>
+
+ <div id="pathNavigation" class="access"><p><strong>Sie sind hier:</strong> <a href="/pbc/trxmdemokonto/account/goto.do">Konten</a> » Zahlungsauftrag im Außenwirtschaftsverkehr</p></div>
+
+
+ <div class="pageFunctions">
+  <h4 class="access">Druck- und Speicherfunktionen</h4>
+  <ul>
+  
+
+   <li class="print"><a href="#" title="Diese Seite drucken">Diese Seite drucken</a></li>
+   <li class="pdf"><a href="pdfDownload.do" title="Diese Seite als PDF-Datei speichern">Diese Seite als <acronym title="Portable Document Format">PDF</acronym>-Datei speichern</a></li>
+   <li class="csv"></li>
+  </ul>
+ </div> <!-- End of pageFunctions -->
+
+
+ <h1>Auslands-Überweisung (Z1)</h1>
+
+	<div id="sideContent">
+		
+			
+
+
+
+
+
+
+
+ 
+ <div id="orientationContainer">
+   <h4 class="access">Dieser Vorgang ist in mehrere Schritte unterteilt.</h4>
+    <ol>
+  
+   
+  <li class="completedStep">
+           
+         
+          <em>Zielland und Währung wählen</em>
+         
+        </li>
+  
+   
+  <li class="completedStep">
+           
+         
+          <em>Daten eingeben</em>
+         
+        </li>
+  
+   
+  <li class="completedStep">
+           
+         
+          <em>Daten überprüfen und freigeben</em>
+         
+        </li>
+  
+   
+    
+   
+  <li class="currentStep completedStep">
+         
+          <strong><span class="access">Sie sind hier: </span>Bestätigung</strong>
+           
+         
+        </li>
+  
+       </ol>
+ </div>  <!-- End of orientationContainer -->  
+ 
+ 
+		
+
+	
+		<div class="additionalInfo">
+			<h4>Tipp</h4>
+			
+			
+			<p>Diese/n Auslands-Überweisung (Z1) ausdrucken und zu Ihren Unterlagen nehmen.</p><ul><li class="print"><a href="#">ausdrucken</a></li></ul>
+		</div> <!-- End of additionalInfo -->
+	
+
+	</div> <!-- End of sideContent -->
+
+	<div id="mainContent">
+	
+		
 
-<h2 id="scope">Scope</h2>
-<p>At the current time:</p>
-<ul>
-  <li>Access to data about W3C specifications, groups, and events.
-    <ul>
-      <li>Out of scope for the first version: data about mail
-    </ul>
-  <li>Still in scope but lower priority: individuals, organizations.
-  <li>JSON representation of data
-</ul>
 
-<h2 id="timeline">Timeline</h2>
-<p>Depends on:</p>
-<ul>
-  <li>Whether we can leverage some modules/extensions
-  <li>Changes to CG site based on beta
-</ul>
-
-<h3 id="estimate">Rough estimate</h3>
-<p>Timeline:</p>
-<ul>
-  <li>August, September 2014: Research into what we can use
-  <li>September 2014: Work starts in earnest
-  <li>December 2014: Crisp definition of APIs; templates for lists and metadata pages available
-  <li>February 2015: APIs available publicly
-</ul>
-
-<h2 id="requirements">Requirements</h2>
-<h3 id="project_requirements">Project Requirements</h3>
-<ul>
-  <li>The APIs must be developed in public.
-  <li>The APIs must be publicly documented.
-</ul>
-
-<h3 id="design_requirements">Design Requirements</h3>
-<ul>
-  <li>Client-side functionality in key index pages:
-    <ul>
-      <li>For specifications: Filtering by group, title, tag
-      <li>For groups: Filtering by title, tag
-      <li>For events: filtering by title, tag
-    </ul>
-  <li>APIs return JSON
-    <ul>
-      <li>To be formatted on the client side
-      <li>In the future there may be APIs for getting HTML-formatted information (e.g., for inclusion on vertical pages)
-    </ul>
-  <li>APIs must be able to take into account the user's credentials.
-    <ul>
-      <li>For example, for a given API we might provide Member-only additional information if the user is logged in with an appropriate account.
-    </ul>
-  <li>Filter/sort states on the client should be URI addressable
-    <ul>
-      <li>We will need general purpose query strings
-      <li>We may also want some friendlier URIs for common queries.
-    </ul>
-  <li>There should be an "all" view of each kind of index (specs, groups, etc.) that does not rely on JavaScript.
-</ul>
-
-<h4>Questions</h4>
-
-<ul>
-    <li>How will we identify individual specifications? Related specifications (e.g., short name)?
-    <li>How will we identify individual groups? Activities? Domains?
-</ul>
-
-<h3 id="server_requirements">Server Requirements</h3>
-
-<ul>
-    <li>Our data servers must be extremely high performance (e.g., with strong caching in front).
-    <ul>
-        <li>Some symfony, some between that and public (like varnish)
-    </ul>
-    <li>We need to consider unwanted bot traffic as we will have a larger number of URIs advertised.
-</ul>
-
-<h4>Questions</h4>
-
-<ul>
-    <li>Our current framework sits on top of several databases that have some inconsistencies in field name conventions and other things which if exposed directly could confuse or frustrate developers. There are extensions to our framework that could greatly facilitate in creating this API but not with the best forward facing mapping. How much does this need to be cleaned up to make it more intuitive?
-    <li>W3C logic on publications workflow, group formation etc would be challenging to permit modification through the Web API (eg POST of revised or new JSON) even with authentication. What would be desirable to allow writes to? Individuals' information, with the exception of organization affiliation as that requires verification, is a candidate.
-    <li>Should the API URI scheme leverage our current (not visible to public at present) convention for groups, users and specs or establish a new scheme? It would be nice to use the existing for discoverability and consistency but a new URI space could be beneficial for caching, scalability, acl and other considerations.
-    <li>Do we want to be our own CDN?
-</ul>
-
-<h3 id="privacy_requirements">Privacy requirements</h3>
-
-<ul>
-    <li>Will address when we get to individuals and members.
-</ul>
-
-<h2 id="Use_Cases">Use Cases</h2>
-<h3 id="specifications">Specifications</h3>
-
-<ul>
-    <li>A developer wants to write a new app based on our data and requires all the data about all specifications.
-    <ul>
-        <li>Includes all Technical Reports of any status and all registered CG and BG reports.
-    </ul>
-    <li>TR page views
-    <ul>
-        <li>Each view will be a list of Limited_Specification_Data restricted to WG/IG publications.
-        <li>Each view will allow:
-        <ul>
-            <li>Sorting by date (ascending/descending), title (ascending/descending)
-            <li>Filtering by group, title, tag
-        </ul>
-        <li>Views
-        <ul>
-            <li>Fifty most recently published specifications, and the ability to request the next 50.
-            <li>All publications within a date range (e.g., for AC meeting fact sheet)
-            <li>The most recent draft of every technical report.
-        </ul>
-    </ul>
-    <li>Group wishes to create custom display of information about its publications
-    <ul>
-        <li>Specifications published by a list of 1 or more identified groups, all data.
-        <li>Specifications published by a list of 1 or more identified groups, Limited_Specification_Data
-    </ul>
-    <li>Per specification
-    <ul>
-        <li>All data for an identified specification; this will be used to construct the "spec view" for each spec in the TR page.
-    <li>Title query
-    </ul>
-    <ul>
-        <li>Limited_Specification_Data for all specifications whose title at least partially matches (case-insensitive) a string.
-    </ul>
-    <li>Tag query
-    <ul>
-        <li>Limited_Specification_Data for all specifications whose tags correspond exactly to an input list of tags. We will use this in the "major topic" views (e.g., show me specs of particular interest to the automotive industry).
-    </ul>
-</ul>
-
-<h4>Notes</h4>
-
-<ul>
-    <li>We are only planning limited query capabilities. For custom queries, use a series of individual queries.
-</ul>
-
-<h3 id="groups">Groups</h3>
-
-<ul>
-    <li>A developer wants to write a new app based on our data and requires all the data about all groups.
-    <ul>
-        <li>Includes WGs, IGs, CGs, BGs, Coordination Groups, TAG, and AB
-    </ul>
-    <li>List of Groups page
-    <ul>
-        <li>A list of Limited_Specification_Data
-        <li>Allow:
-        <ul>
-            <li>Sorting by title (ascending/descending)
-            <li>Filtering by domain, title, tag
-        </ul>
-    </ul>
-    <li>Per group
-    <ul>
-        <li>All data for an identified group; this will be used to construct the "group view" for each group in the list
-    </ul>
-    <li>Title query
-    <ul>
-        <li>Limited_Specification_Data for all groups whose title at least partially matches (case-insensitive) a string.
-    </ul>
-    <li>Tag query
-    <ul>
-        <li>Limited_Specification_Data for all groups whose tags correspond exactly to an input list of tags. We will use this in the "major topic" views (e.g., show me groups of particular interest to the automotive industry).
-    </ul>
-</ul>
-
-<h3 id="individuals">Individuals</h3>
-
-<ul>
-    <li>Group participation
-    <li>Roles (e.g., editor of which spec)
-</ul>
-
-<h3 id="organizations">Organizations</h3>
-
-<ul>
-    <li>@@
-</ul>
-
-<h3 id="events">Events</h3>
-
-Note: "Event" here refers to anything with a date/time stamp. We plan to integrate meeting information, publication information, review end dates, etc. into a unified W3C calendar.
-
-<ul>
-    <li>A developer wants to write a new app based on our data and requires all the data about all events.
-    <ul>
-        <li>Includes meetings and other events, publications, spec/charter review start and end dates, election deadlines, registration deadlines.
-    </ul>
-    <li>W3C calendar
-    <ul>
-        <li>A list of Limited_Event_Data
-    </ul>
-    <li>Title query
-    <ul>
-        <li>Limited_Event_Data for all events whose title at least partially matches (case-insensitive) a string.
-    </ul>
-    <li>Tag query
-    <ul>
-        <li>Limited_Event_Data for all events whose tags correspond exactly to an input list of tags. We will use this in the "major topic" views (e.g., show me events of particular interest to the automotive industry).
-    </ul>
-</ul>
-
-<h2 id="apis">APIs</h2>
-<h3 id="api-specs">Specifications</h3>
-<h3 id="api-groups">Groups</h3>
-<h3 id="api-events">Events</h3>
-
-<h2 id="data">Data</h2>
-<h3 id="specs_data">Specifications</h3>
-
-<ul>
-    <li>@IJ likely to rewrite this as a table with different profiles, including "all" and "limited"
-</ul>
-
-<h4>Limited Specification Data</h4>
-
-<ul>
-    <li>Title
-    <li>Link to latest WD
-    <li>Publication date
-    <li>Status
-    <li>Review end date (if applicable)
-    <li>Identifier(s) of responsible group(s)
-    <li>Specification tags
-    <li>URI to get full data
-</ul>
-
-<h4>Full Public Specification Data</h4>
-
-<h3 id="spec_groups">Groups</h3>
-<h4>Limited Group Data</h4>
-
-<ul>
-    <li>Title
-    <li>URI of group home
-    <li>Group type
-    <li>Identifier of Domain
-    <li>Group tags
-    <li>URI to get full data
-</ul>
-
-<h4>Full Public Group Data</h4>
-<h4>Additional Member Data</h4>
-
-<h3 id="spec_events">Events</h3>
-<h4>Limited Event Data</h4>
-
-<ul>
-    <li>Title
-    <li>URI of event announcement (e.g., home page or news item)
-    <li>Event start/end dates
-    <li>Event location (may be empty)
-    <li>Event type
-    <li>Event tags
-    <li>URI to get full data
-</ul>
-
-<h4>Full Public Event Data</h4>
-<h4>Additional Member Data</h4>
-
-<h2 id="performance">Notes on Performance</h2>
-
-<ul>
-    <li>One idea is to create cached copies of data since it does not change that frequently. This can be server-side included (or accessed by URL).
-</ul>
-
-<h2 id="without_js">Notes on Pages without Javascript</h2>
-<ul>
-    <li>When JS is turned off, we want to provide access to all the data, meaning we serve an HTML file. One technique for this is to use something like phantom.js to format the all.html page, which gets updated on a regular basis. This would allow us to reuse the same templates for "view some" as for "view all." PLH likes this approach but wants to be sure that this technique will be available in a decade.
-</ul>
-
-<h2 id="feeds">Feeds/Notifications</h2>
-
-<ul>
-    <li>Twitter?
-    <li>Atom?
-</ul>
-
-<h2 id="Daniel_Davis_URI_notes">Daniel Davis URI notes</h2>
-
-(Based on guidelines from "Web API Design" by Brian Mulloy, <a href="http://daniemon.com/blog/web-api-design-a-definitive-guide/">summarised here</a>.)
-
-The structure of API URLs would be:
-<pre>
-/collection/item
-</pre>
-
-To get all children within a parent resource, the resources would be listed hierarchically:
-
-<pre>
-/collection/item/sub-collection
-</pre>
-
-For filtering and queries beyond the base resources, we can use "?" parameters:
-
-<pre>
-/collection/item?filter=value
-</pre>
-
-This gives us a couple of benefits:
-
-<ul>
-    <li>Consistency and predictability (which should make it future-proof)
-    <li>Uses existing URL strings for specs, groups, etc.
-</ul>
-
-<h3 id="examples">Examples</h3>
-
-<pre>
-/groups - data for all groups
-/groups/dpub - data for DigiPub group
-/domains/ink - data for INK domain
-</pre>
-
-<pre>
-/domains/ink/groups - data for all groups within INK domain
-</pre>
-
-<pre>
-/domains/ink/groups?type=ig - data for all IGs within the INK domain
-/specs/discovery-api - data for the Network Service Discovery API
-/groups/dap/specs?status=wd - data for all WD specs in DAP WG
-</pre>
-
-<h2>Discussion</h2>
-
-<ul>
-  <li><a href="https://www.w3.org/2014/09/09-comm-minutes.html">9 September 2014 minutes</a>
-</ul>
-
-<h2>Resources</h2>
-
-<ul>
-  <li><a href="https://www.w3.org/wiki/SpecProd/Restyle">Tantek/Elika work on spec styles</a>
-</ul>
-</section>
-</html>
-GPG KEY:4AEE18F83AFDEB23
-commit :9a447831ff2e78d7b8bfa675476035677bba0b01
-
-FIN103.STP/GPI+++September 14, 2021+++ 16:05:30+++ UTC+1  
-
-INTERNATIONAL SWIFT ACKS9662-9CUSTOMER’S COPY  
-
--------------------------------------------------- INSTANCE TYPE AND TRANSMISSION ----------------------------------------------- 
-
-RCVD++ NOTIFICATION (TRANSMISSION) OF ORIGINAL SENT TO SWIFT (ACK)  
-
-RCVD++ NETWORK DELIVERY STATUS: NETWORK ACK 
-
-RCVD++ PRIORITY DELIVERY: NORMAL  
-
-RCVD++ MESSAGE OUTPUT REFERENCE: 1409202144711DEUT103966254921  
-
-RCVD++ MESSAGE INPUT REFERENCE: 14092021144711DEUT103371114921881  
-
- ----------------------------------------------------- MESSAGE APPLICATION HEADER ----------------------------------------------- 
-
-RCVD++ SWIFT OUTPUT: MT103 GPI WIRE TRANSFER  
-
-RCVD++ SENDER: 
-
-RCVD++ SENDER’S BANK NAME: DEUTSCHE BANK AG   
-
-RCVD++ SENDER’S BANK ADDRESS: AM BUCHBAUM 12A, D-60437 FRANKFURT AM MAIN, GERMANY Y  
-
-RCVD++ SENDER’S ACCOUNT NAME: T: XO GMBH  
-
-RCVD++ SENDER’S ACCOUNT NUMBER: DE92 5007 0024 0023 3437 00  
-
-RCVD++ SENDER’S SWIFT CODE: DEUTDEDBFRA  
-
-RCVD++ SENDER’S BANK OFFICER NAME: vinita.chejara  
-
-RCVD++ SENDER’S BANK OFFICER EMAIL: vinita.chejara@db.com  
-
-RCVD++ SENDER’S TELEPHONE: +49 69 910-00  
-
-RCVD++ SENDER’S GLOBAL SERVER IP: 193.150.166.0/24 /193.150.166.0/243  
-
-RCVD++ SENDER’S IMAD NUMBER: 27C DB FR DE 17BEH  
-
-RCVD++ SENDER’S WTS SERVER: LOT/S005635 / S0200235 
-
-RCVD++ AMOUNT/CURRENCY: €980.000.00€ EURO€ 
-
-RCVD++RCVD++ RECEIVER: 
-
-RCVD++ RECEIVER’S: BANK NAME: YAPI VE KREDİ BANKASI ANONİM ŞİRKETİ TURKEY 
-
-RCVD++ RECEIVER’S: BANK ADDRESS: 22 NİSAN MH. 75 YIL BLV.A BLOK NO:5A/11-12 NİLÜFER-BURSA 
-
-RCVD++ RECEIVER’S ACCOUNT NAME: ÖMER AYATA TUĞRA ENERJI 
-
-RCVD++ RECEIVER’S ACCOUNT NUMBER: TR37 0006 7010 0000 0077 4458 81   
-
-RCVD++ RECEIVER’S SWIFT CODE: YAPITRISXXX   
-
-RCVD++ RECEIVER’S BANK OFFICER NAME: LEVENT YENIGUN 
-
-RCVD++ RECEIVER’S BANK OFFICER EMAIL:  
-
-RCVD++ RECEIVER’S TELEPHONE:   
-
-RCVD++ RECEIVER’S GLOBAL SERVER IP: 172.31.32.88 TURKEY 
-
-RCVD++ RECEIVER’S IMAD NUMBER: ec2-3-120-16-55.eu-central-TR  
-
-RCVD++ RECEIVER’S WTS:T96O1253,125PP96TR  
-
-RCVD++ AMOUNT/CURRENCY: €980,000,00€ EURO€ 
- ----------------------------------------------------------------------------------------------------------------------------- 
-RCVD++ 108: MESSAGE USER PREFERENCE  
-
-RCVD++ MIR: 273215804901  
-
-RCVD++ 119 VALIDATION FLAG: STP  
-
-RCVD++ SERVICE TYPE IDENTIFIER: 111:001  
-
-RCVD++: 121: UNIQUE-END-TO-END-TRANSACTION-REFERENCE UETR : [a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12 
-
------------------------------------------------------ MESSAGE TEXT ------------------------------------------------------------- 
-
-***F20: TRANSACTION REFERENCE: DEUT67232757-Y706ZY  
-
-***F21: TRANSACTION CODE: GSS-CUS-KZNBRU7485306PLTY 
-
-***DEPOSIT CODE: DB79056588 DTSZS/N°.79056-CA-79055  
-
-***PERMIT ARRIVA MONEY NUMBER: SCF-85O96H95TY159  
-
-***FED CODE: F–211009154.G943–19–9543–126859–698  
-
-***F23B: BANK OPERATION CODE: CRED  
-
-***F32A: VAL DATE/CURR/INTERBANK SETTLEMENT  
-
-DATE: SAME DAY  
-
-CURRENCY: EUR  
-
-AMOUNT: € 980,000.00  
-
-***F33B: CURRENCY/INSTRUCTED AMOUNT: € 980,000.00(Nine hundred and eighty thousand euros )  
-
-***F50A: ORDERING CUSTOMER NAME & ADDRESS: T XO GMBH/60437 FRANKFURT - GERMANY  
-
-***F52A: ORDERING ACCOUNT: / FI / DE92500700240023343700   /DEUTDEDBFRA  
-
-***F59A: BENEFICIARY CUSTOMER NAME&ADDRESS: API VE KREDİ BANKASI ANONİM ŞİRKETİ /TURKEY/ YAPITRISXXX / TR370006701000000077445881  
-
-***F70: REMITTANCE INFORMATION INVESTMENT  
-
-***F71A: DETAILS OF CHARGES OURS: BEN  
-
-***F72: SENDER TO RECEIVER’S INFORMATION: // PLEASE ADVISE THE BENEFICIARY OF THIS SWIFT. 
-
-// THIS TRANSFER IS VALID FOR PAYMENT ON THE DAY OF RECEIPT. 
-
-// THIS IRREVOCABLE CASH-BACKED SWIFT MT103 GPI TRANSFER  
-
-***F77B: REGULATORY REPORTING: // € 980,000.00(Nine hundred and eighty thousand euros)  
-
-// OPERATIVE INSTRUMENT NO MAIL OR SWIFT SERVICE LEVEL IS REQUIRED. 
-
-*** F79: NARRATIVE 
-
-MANDATORY FIELDS: MT 103  
-
-F23B: BANK OPERATION  
---------------------------------------------------------------------------------------------------------------------------------- 
-F32A: VALUE DATE/CURRENCY/INTERBANK SETTLED DATE  
-
-DATE: September 14, 2021  
-
-TIME: 16:05:30  
-
-CURRENCY: EUR  
- -------------- ------------------------------------------------------------------------------------------------------------------------- 
-DEUTANZB114HU85RY69  
-
-PKI TURKYE MAC EQUIVALENT  
-
---------------------------------------------------------------------------------------------------------------------------------- 
-
-APPLICATION: SWIFT INTERFACE  
-
-OPERATION: SYSTEM  
-
-END TIME: September 14, 2021 16:05:30  
-
-TEXT (DEUTANZBZAUSN07 5847 JU78 50 00)  
-
-:1)FO1 BPKOPLPW5899JO0215/PL311596857560000180202158558 
-
-  -------------------------------------------------------------------------------------------------------------------------------------- 
-
-(1//SENDER AMOUNT: €980,000.00 #EURO# 
-
-(2//RECEIVER CODE: 13817425894IO/101825843  
-
-(3//PROVIDER CODE: A23F17.10.37 47 GTF5  
-
-(4//TRANSMITTING BANK: DEUTSCHE BANK AG  
-
-(5//BANK ADDRESS: TAUNUSANLAGE 12,60325 FRANKFURT AM MAIN GERMANY  
-
-(6//SWIFT CODE: DEUTDEDBFRA  
-
-(7//DEPOSIT CODE: DB79056588 ARTS/N°.79056-CA-79055  
-
-(8//GLOBAL_CODE: TLTQTLOPS504.5569OKTD/259  
-
-(9//REFERENCE CODE: JIE/.58GU4957 /58569 
-
-(10/FEDS CODE: F–21091405154.G943–1069–9543–8969–342  
-
-(11/SECURITY CODE: SET BY RECEIVER BANK  
-
-(12/MILLION/BILLION DEPARTMENT FRANKFURT: ART/Y - LAW -- 21 - FRANKFURT GOVERNMENT, TCL75342 /13( 
-
-ONE - TIME SATELLITE SWIFT DOWNLOAD ACCESS WITHDRAW CODE: 5267958696 
-
-WE HEREBY CONFIRM WITH FULL BANKING RESPONSIBILITY THAT THE ABOVE FUNDS ARE GOOD, CLEAN, CLEAR, AND TAXED //FUNDS OF NON-CRIMINAL ORIGIN, FREE FROM ANY LIENS OR ENCUMBRANCES, AND PAID FOR INVESTMENT MT103 IS FOR //IMMEDIATE CREDIT-INSTANT SAME DAY    VALUE AND NO MAIL OR SWIFT CONFIRMATION SHALL FOLLOW. 
-
-   --------------------------------------------------------------------------------------------------------------------------------
-TRANSMISSION CODES  
-
-1 .FINAL CODE: DEUT-679585236987/4586LO56  
-
-2 .SORT CODE: 678 691 681  
-
-3 .TRANSACTION CODE: 5794661  
-
-4 .ACCESS CODE: ANZ5269UJ85NH9  
-
-5 .KEY CODE: DEUT51009215869KOL94  
-
-6 .FINAL BLOCKING CODE: KKTUCDEW695863KBVZD  
-
-7 .RELEASE CODE: 325967854  
-
-8 .RECEIVING_CODE: 114586PPLK96TY1596  
-
- ------------------------------------------------------------------------------------------------------------------------------------ 
-
-WE, DEUTSCHE BANK AG LOCATED AT TAUNUSANLAGE 12,60325 FRANKFURT AM MAIN GERMANY, WITH FULL BANK  
-
-RESPONSIBILITY HEREBY  
-
-PRESENT OUR UNCONDITIONAL, IRREVOCABLE, ASSIGNABLE, TRANSFERABLE, AND CALLABLE CASH-BACKED STANDING S.W.I.F.  
-
-T MT103  
-
-GPI TRANSFER IN FAVOR OF "T XO GMBH PMP PROSPERSP.ZO.O." WITH ACCOUNT NUMBER: DE92500700240023343700 IN THE AMOUNT OF 980,000.00 #EURO#  
-
-(Nine hundred and eighty thousand euros) THIS FUND IS FOR INVESTMENT PURPOSES. 
-
-WE HEREBY CONFIRM THAT THESE FUNDS ARE GOOD, CLEAN, AND CLEARED FUNDS OF NON-CRIMINAL ORIGIN ARE FROM  
-
-LEGAL SOURCES.THIS  
-
-IRREVOCABLE, SWIFT MT 103 WIRE TRANSFER IS BINDING FULLY PERFORMED DUE BILL AND IMMEDIATELY CALLABLE FOR  
-
-CASH PAYMENT, 
-
-WE CONFIRM THAT THE PAYMENT SHOULD BE RELEASED IMMEDIATELY. 
-
-THIS UNCONDITIONAL, IRREVOCABLE, ASSIGNABLE, TRANSFERABLE, AND CALLABLE MT 103 GPI S.W.I.F.T IS VALID FOR ONE  
-
-YEAR OF  
-
-RECEIPT WITHOUT PRESENTATION OF IT TO US AND WITHOUT PAYMENT OF ANY TRANSFER OR ASSIGNMENT FEES. 
-
-THIS IS AN OPERATIVE INSTRUMENT FOR AND ON BEHALF OF DEUTSCHE BANK AG LOCATED AT TAUNUSANLAGE 12,-60325  
-
-FRANKFURT AM  
-
-MAIN GERMANY, SUBJECT TO THE YAPI VE KREDİ BANKASI ANONİM ŞİRKETİ AND SUBJECT TO  ACCOUNT TR370006701000000077445881 
-
-ACCOUNT NAME ÖMER AYATA TUĞRA ENERJI 
-
-PAYMENT AND IS  
-
-VALID FOR ONE YEAR. 
-
-NO FURTHER CONFIRMATION EITHER BY FAX OR MAIL AFTER THIS MESSAGE. 
-
-ALL ISSUING BANK CHARGES ARE FOR THE ACCOUNT OF ITS APPLICANT. 
-
-RECORD INFORMATION SWIFT ORDER IS MAC: (PAC) (PEG ENC) DEBZA (INT) PED) (MAC). FORAND ON BEHALF OFDEUTSCHE BANK AG 60254 ,FRANKFURT AM MAIN, GERMANY  
-
-  ------------------------------------------------------------------------------------------------------------------------------------ 
-1110000000010233413877: YAPIBAU3M  
-
-CONF: DATE: September 14, 2021+++ 16:05:30+++ UTC+1  
-
-D-60437 FRANKFURT AM MAIN, GERMANY 
-
-+++681 691 678+++MSG+++555 TITLE  
-
-YAPI569: DEAN138174258  
-
- ---------- --------------------------------------------------------- INTERVENTIONS-------------------------------------------------------- 
-
-CATEGORY: NETWORK REPORT  
-
-CREATION TIME:09/14/2021 16:05:30  
-
-APPLICATION: SWIFT INTERFACE  
-
-OPERATION: SYSTEM  
-
-END TIME: 09/14/2021 16:34:17UTC+1  
-
-TEXT (DEUTDEDBFRADE915007002406619050 00)  
-
-:1)FO1 BPKOPLPW000018020215855/PL31102053560000180202158558 
-
- ---------------------------------------------------------------------------------------------------------------------------------- 
 
  
 
-CONF DATE: September 14, 2021+++ 16:05:30+++ UTC+1 
+ <div class="advice warning mainContentWidth">
+  <h3>Bitte beachten Sie</h3>
+  <p>Gebietsansässige möchten wir auf die <abbr title="gegebenenfalls">ggf.</abbr> nach dem Außenwirtschaftsgesetz <abbr title="beziehungsweise">bzw.</abbr> der Außenwirtschaftsverordnung bestehende Meldepflicht aufmerksam machen.</p>
+  <p>Informationen zur Meldepflicht erhalten Sie von der Deutsche Bundesbank unter <span xml:lang="en" lang="en">Hotline</span> 0800 / 1234111 (entgeldfrei). Die entsprechende Formulare stehen auf der <span xml:lang="en" lang="en">Homepage</span> der Deutsche Bundesbank (www.bundesbank.de) zur Verfügung.</p>
+  <ul>
+   <li><a href="http://www.bundesbank.de/meldewesen/mw_aussenwirtschaft_z1z4.php" title="Neues Fenster: Formular für Zahlungen im Außenwirtschaftsverkehr herunterladen" target="_blank">Formular für Zahlungen im Außenwirtschaftsverkehr herunterladen</a></li>
+  </ul>
+ </div> <!-- End of advice warning mainContentWidth -->
 
-+++ D-60437 FRANKFURT AM MAIN, GERMANY +++678 691 681  
+	
 
-MSG NO: 555TITLE: MT-103 GPI WIRE TRANSFER AUTHENTICATION MESSAGE CONFIRMATION LOGICAL ANSWER-BACK? (YES)  
+		
+		
+			
+		
+		<table cellspacing="0" class="summary" summary="Tabellarische Übersicht Auslands-Überweisung (Z1)">
+		
+		
+		
+		<thead>
+			<tr class="odd">
+				<th colspan="2">Ihr Auslands-Überweisungsauftrag</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+	
+	
+	
+		
+		
+		
+		
+		
+			<tr class="success odd">
+				<td colspan="2">Wir haben am 14.02.2023 um 23:37 Uhr Ihren Auslands-Überweisungsauftrag erhalten.<br>Vielen Dank für Ihren Auftrag.</td>
+			</tr>
+		
+		
+		
+		
+		
+			
+			
+			
+				
+				<tr>
+					<td>Zielland</td>
+					<td class="value">Indonesien&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr class="odd">
+					<td>Währung</td>
+					<td class="value">EUR&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr>
+					<td>Name</td>
+					<td class="value">PT: GRAND INDO&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr class="odd">
+					<td>Namenserweiterungen</td>
+					<td class="value">BUN BOXES&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr>
+					<td>Straße und Hausnummer</td>
+					<td class="value">KCP FATMAWATI Jl. RS Fatmawati&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr class="odd">
+					<td>Ort / Land</td>
+					<td class="value">Blok D III No. 115, CIlandak, Jakar&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr>
+					<td><acronym title="International Bank Account Number" xml:lang="en" lang="en">IBAN</acronym> oder Kontonummer</td>
+					<td class="value">1676588879&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr class="odd">
+					<td><acronym title="Bank Identifier Code" xml:lang="en" lang="en">BIC</acronym> / <acronym title="Society for Worldwide Interbank Financial Telecommunication" xml:lang="en" lang="en">SWIFT</acronym>- National Bank Code</td>
+					<td class="value">BNINIDJAXXX&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr>
+					<td>Empfängerbank</td>
+					<td class="value">BANK NEGARA INDONESIA - PT (PERSERO)&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr class="odd">
+					<td colspan="2">Straße und Hausnummer</td>
+				</tr>
+				
+				
+			
+			
+				
+				<tr>
+					<td>Ort der Empfängerbank</td>
+					<td class="value">JAKARTA                            SUPEFINTG+&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr class="odd">
+					<td>Betrag</td>
+					<td class="value">30.000.000,00&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr>
+					<td>Entgeltregelung</td>
+					<td class="value">Alle Entgelte zu Lasten Auftraggeber&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr class="odd">
+					<td colspan="2">Verwendungszweck</td>
+				</tr>
+				
+				
+			
+			
+				
+				<tr>
+					<td>Auftraggeber</td>
+					<td class="value"> FDS FUTURE DESIGN SYSTEMS GMBH&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr class="odd">
+					<td>Auftraggeber Kontonummer</td>
+					<td class="value"> DE252007002403169000 00 [EUR]&nbsp;</td>
+				</tr>
+			
+			
+			
+				
+				<tr>
+					<td>Verwendete photoTAN</td>
+					<td class="value">4324527&nbsp;</td>
+				</tr>
+			
+			
+		
+	
+	
+	
+		</tbody>
+		</table>
+		
+	
+		
 
-VALUE DATE/END TIME September 14, 2021+++ 16:34:17+++ UTC+1 MESSAGE HAS BEEN TRANSMITTED(01) 
 
- -------------------------------------------------------------------------------------------------------------------------------- 
-MT 103 GPI ACKNOWLEDGMENT MESSAGE 
----- ----------------------------------------------------------------------------------------------------------------------------- 
-QUOTE: DEUTSCHE BANK AG LOCATED AT TAUNUSANLAGE 12,60325 FRANKFURT AM MAIN GERMANY DO HEREBY BRING TO  
 
-YOUR NOTICE  
 
-THE ONGOING MT-103 GPI WIRE TRANSFER IN OUR BANK TO THE SUM OF: 980,000,000.00 #EURO# (Nine hundred and eighty thousand euros)  
 
-IN YOUR FAVOR PMP PROSPERSP.ZO.O. THIS RECORD IN OUR BANK. 
 
-***AUTOMATED FILE TRANSFER (AFT) DEUTSCHE BANK AG RESPONSE  
 
-***VALIDATION SERVICE PROVIDER LOG FAIL/APPLICATION GENERATED REPORT  
+<div class="option nextStep ">
+  <form id="nextgotoForm" method="post" action="/pbc/trxmdemokonto/fbtransferZ1/goto.do">
+  <h3>Was möchten Sie als nächstes tun?</h3>
+  <table cellspacing="0" class="layout">
+  <tbody><tr>
+   <td class="rgtPadding nowrap"><label for="selector">Direkt zu:</label></td>
+   <td class="rgtPadding roll">
+   <select name="nextPageToGo" size="1" id="selector" class="roll"><option value="volume">Umsatzanzeige</option>
+<option value="mbatransactions">MultiBanking Umsätze</option>
+<option value="instantpayment">Echtzeit-Überweisung</option>
+<option value="dbtransfer">Inlands-Überweisung</option>
+<option value="fbtransfer">Auslands-Überweisung</option>
+<option value="datetransfer">Termin-Überweisungen</option>
+<option value="satransfer">Überweisung auf Unterkonto</option>
+<option value="templates">Überweisungsvorlagen</option>
+<option value="bankorder">Daueraufträge</option>
+<option value="thirdPartyProviders">Banking über Drittanbieter</option>
+<option value="paydirektOverview">paydirekt</option>
+<option value="volumeAccountProperties">IBAN und BIC anzeigen</option>
+<option value="sepadebit">SEPA-Lastschrift</option>
+<option value="datedebit">Termin-Lastschriften</option>
+<option value="debittemplates">Lastschrift-Vorlagen</option>
+<option value="accountReferenceaccount">Referenzkonto</option></select>
+   </td>
+   <td><input type="submit" name="method" value="weiter" class="button nextStep"></td>
+  </tr>
+  </tbody></table>
+  </form>
+</div> <!-- End of option nextStep -->
 
-***ACKNOWLEDGMENT & AUTHENTICATION ACK/NAG DELIVERY  
+	</div> <!-- End of mainContent -->
 
-***FTA/FTI CONFORMANCE STATEMENT PASS/FAIL STATUS  
 
-0050 CNT,-------------------------------------------------------VALID   
+  <div class="advice" id="printoutNotice">
+  <h3>Hinweis zur Druckausgabe</h3>
+  <p>Unter Umständen kann es vorkommen, dass Ihr Browser diese Seite nicht optimal ausdruckt. In diesem Fall <strong>verwenden Sie bitte die Druckvorschau</strong>, um die Darstellung der Seite anzupassen.</p>
+  <ol>
+   <li>Wählen Sie <em>Datei</em> » <em>Druckvorschau</em>.</li>
+   <li>Ändern Sie die Ausrichtung der Seite in das <em>Querformat</em>.</li>
+   <li><em>Drucken</em> Sie die Seite aus.</li>
+  </ol>
+ </div> <!-- End of printoutNotice -->
+</div> <!-- End of contentContainer -->
 
-0060 RFF-BTM,--------------------------------------------------VALID   
 
-0070 RFF,-------------------------------------------------------VALID   
+<div id="footerContainer">
 
-0080 DTM,------------------------------------------------------VALID   
+ <div class="pageFunctions">
+  <h4 class="access">Druck- und Speicherfunktionen</h4>
+  <ul>
+  
+   <li class="print"><a href="#" title="Ihren Auslands-Überweisungsauftrag ausdrucken">Ihren Auslands-Überweisungsauftrag ausdrucken</a></li>
+   <li class="pdf"><a href="pdfDownload.do" title="Neues Fenster: Ihren Auslands-Überweisungsauftrag als PDF-Datei speichern">Ihren Auslands-Überweisungsauftrag als <acronym title="Portable Document Format">PDF</acronym>-Datei speichern</a></li>
+   <li class="csv"></li>
+  </ul>
+ </div> <!-- End of pageFunctions -->
 
-0090 NAD-CTA-COM,------------------------------------------VALID   
 
-0100 NAD,------------------------------------------------------VALID   
+<!-- Footer -->
 
-0110 CTA,-------------------------------------------------------VALID   
 
-0120 COM,------------------------------------------------------VALID   
 
-0130 ERC-FTX-SG4,---------------------------------------------VALID   
 
-0140 ERC,-------------------------------------------------------VALID   
 
-0150 FTX,-------------------------------------------------------VALID   
 
-TITLE   
 
-PRT_TPZH ANSWER-BACK AND ACKNOWLEDGEMENT MESSAGE AUTOMATED FILE TRANSFER (AFT) GATEWAY   
+ <div id="pageFeatures">
+  <div id="infoBar">
+   <h4 class="access">Hilfe und weiterführende Informationen</h4>
+   <ul>
+        
+         
+          
+          <li>
+           <a rel="help" accesskey="5" href="https://www.deutsche-bank.de/pk/shared/trxm/help-de/konten/konten-ueberwausl-z1.html?style=pbc" title="Neues Fenster: Hilfe zu dieser Seite">Hilfe</a>
+          </li>
+         
+        
+    <li><a rel="contents" accesskey="6" href="../sitemap/goto.do" title="Zur Seitenübersicht">Seitenübersicht</a></li>
+    <li><a rel="author" href="https://www.deutsche-bank.de/pk/shared/trxm/help-de/impressum.html" title="Neues Fenster: Impressum">Impressum</a></li>
+    <li><a rel="copyright" href="https://www.deutsche-bank.de/pk/shared/trxm/help-de/uebersicht/uebersicht-rechtlhinweise.html" title="Neues Fenster: Rechtliche Hinweise">Rechtliche Hinweise</a></li>
+    <li><a rel="privacy" href="https://www.deutsche-bank.de/pk/shared/pu_help_ovv_datenschutz.html" title="Neues Fenster: Datenschutz">Datenschutz</a></li>
+   </ul>
+  </div>
+  <div id="fontSizer">
+   <h4>Schriftgröße</h4>
+   <script type="text/javascript">/*<![CDATA[[*/efaFontsize();/*]]>*/</script><a id="fs-small" href="#" title="Normale Schriftgröße" class="active">Normale Schriftgröße</a><a id="fs-normal" href="#" title="Große Schriftgröße">Große Schriftgröße</a><a id="fs-large" href="#" title="Sehr große Schriftgröße">Sehr große Schriftgröße</a>
+  </div>
+ </div>
+</div> <!-- End of footerContainer -->
+</div> <!-- End of folderContainer -->
 
-RESPONSE VALIDATION SERVICE PROVIDER LOG/APPLICATION GENERATED REPORT ACKNOWLEDGEMENT   
-
-& AUTHENTICATION ACK NAG DELIVERY FTA/FTI CONFIRMATION STATEMENT PASS/FAIL STATUS   
-  --------------------------------------------------------------------------------------------------------------------------------- 
-
-ACKNOWLEDGEMENT RECEIPT DEUTDEBFRA   
-
-STATUS: DELIVERED   
-
-SENDER: DB-60437 FRANKFURT AM MAIN, GERMANY  
-
-CATEGORY CODE: RF   
-
-SEQUENCE/NUMBER: 421960  
-
-END OF TRANSMISSION: 14-09-2021  
-
-END TIME: 16:34:17 CET  
-
-------------------------------------------------------SWIFT END CODE --------------------------------------------------------   
-
-ACCESS CODE                : DE75454067BN7066    
-
-RELEASE CODE: DE93861747BN8117   
-
-DOWNLOAD CODE: DE6054593671889BND8472  
-
-WITHDRAW PERMISSION CODE: DE712SG3508DVY7  
-
-DIRECTOR ID: DEUT-HEBA37890672 
-
-BONDINGKEY: JWSDB8872AN8527  
-
-ACTIVATION CODE: AM9384M1241670728908  
-
-PIN CODE 1: DE000DB2G032  
-
-PIN CODE 2: DE000DB2G3N 
------------------------------------------------------------------------------------------------------------------------- 
-
-AUTHORIZED OFFICER   
-
-CHIEF EXECUTIVE OFFICER 
+<div class="access">
+ <ul>
+  <li><a href="#globalContainer">Zum Anfang der Seite springen</a></li>
+ </ul>
+</div>
+</div>
