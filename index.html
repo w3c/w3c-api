@@ -7,10 +7,7 @@
 <section>
 <h2 id=introduction>Introduction</h2>
 <p>This page describes the resources forming the W3C API. If you have any problems or requests, please submit an <a href="https://github.com/w3c/w3c-api/issues">issue</a>.</p>
-<p>
-    Anyone with a <a href="https://www.w3.org/accounts/request">W3C Account</a> and an <a
-        href="https://www.w3.org/users/myprofile/apikeys">API key</a> can use W3C API.
-</p>
+<p>The W3C API is public and doesn't require authentication.</p>
 </section>
 <section>
 <h2 id=schema>Schema</h2>
@@ -19,17 +16,12 @@
 <p>The details about the different API endpoints are documented at <a href="https://api.w3.org/doc">https://api.w3.org/doc</a>.</p>
 
 <pre>
-$ curl -i https://api.w3.org/groups?apikey=xxx
+$ curl -i https://api.w3.org/groups
 HTTP/1.1 200 OK
 Content-Type: application/json
 Cache-Control: public, s-maxage=900
-Date: Mon, 23 Nov 2015 12:10:43 GMT
-Last-Modified: Wed, 18 Nov 2015 22:39:10 GMT
-X-RateLimit-Limit: 1000
-X-RateLimit-Remaining: 998
-X-RateLimit-Reset: 1448284222
-Transfer-Encoding: chunked
-Accept-Ranges: bytes
+access-control-allow-origin: *
+Date: Mon, 23 Jul 2023 12:10:43 GMT
 {...}
 </pre>
 
@@ -37,78 +29,6 @@ Accept-Ranges: bytes
 <pre>
 YYYY-MM-DDTHH:MM:SSZ
 </pre>
-
-<h2 id="apikeys">API Keys</h2>
-<h3 id="generate">Generate API Keys</h3>
-
-<p>
-    To generate API keys, head to your <a href="https://www.w3.org/users/myprofile/apikeys">W3C API keys management
-    page</a>.
-    This page can also be reached from your main <a href="http://www.w3.org/users/myprofile">W3C profile page</a>.
-</p>
-
-<p>
-    You can create several keys (five by default, ask <a href="mailto:sysreq@w3.org">W3C Systems Team</a>) to help
-    maintain multiple applications.<br/>
-    Each key must have a label, and may <a href="#restrictions">specify a list of domain names allowed to make
-    requests to the API</a> (more about this below).
-</p>
-
-<h3 id="restrictions">Restricting API Keys</h3>
-
-<p>
-   If API keys are going to be publicly visible (for example in some client-side Javascript code), it is <strong>highly
-  recommended</strong> to specify allowed domains when creating or editing them.
-</p>
-
-<p>
-Requests made with such keys will then be authorized <strong>only</strong> if the origin domain (using
-    <a href="https://www.w3.org/TR/cors/">CORS</a> <a href="https://www.w3.org/TR/cors/#origin-request-header">Origin
-    header</a>)
-  matches one of this key's domains.</p>
-
-  <p>If the key is not associated with a domain, the <code>Origin</code> header is not mandatory.
-</p>
-
-
-<h3 id="use">Use an API Key</h3>
-
-<p>
-    To successfully get data from W3C API, you need to include an API key in every request. There are two ways to do
-    that:
-</p>
-<ul>
-    <li>Using the <code>apikey</code> query parameter: <code>https://api.w3.org/groups?apikey=mgug2t7fylcksswc4gcs08s4gooo0ok</code>
-    </li>
-    <li>Using the HTTP Authorization header: <code>Authorization: W3C-API
-        apikey="mgug2t7fylcksswc4gcs08s4gooo0ok"</code></li>
-</ul>
-
-<p>Failing to provide a (valid) key, you will get one of the following HTTP errors:</p>
-<ul>
-    <li>401 Missing API key</li>
-    <li>403 Invalid API key</li>
-</ul>
-
-<h3>Rate limiting</h3>
-
-<p>
-    By default, each key can make up to 5000 requests per hour. <a href="mailto:sysreq@w3.org">W3C Systems team</a>
-    can increase that limit.
-</p>
-<p>
-    You can check the status of a key in response headers after any request:
-</p>
-<pre>X-RateLimit-Limit: 5000
-X-RateLimit-Remaining: 4524
-X-RateLimit-Reset: 1439472737</pre>
-
-<p>
-    Alternatively, the <code>/rate_limit</code> endpoint will give the same information in both JSON and headers, without increasing the number of hits.
-</p>
-<p>
-    If this limit is reached, you will get a 429 HTTP Error.
-</p>
 
 <h2 id=parameters>Parameters</h2>
 <p>The W3C API takes optional parameters that can be passed as an HTTP query string parameter.</p>
@@ -158,20 +78,6 @@ X-RateLimit-Reset: 1439472737</pre>
 <p>As mentioned in the <a href="#parameters">parameters section</a>, requests that return multiple items will be paginated to 100 items by default. You can specify further pages with the <code>?page</code> parameter. For some resources, you can also set a custom page size up to 1000 with the <code>?items</code> parameter.</p>
 
 <p>Note that page numbering is 1-based and that omitting the <code>?page</code> parameter will return the first page.</p>
-
-<h2 id=cors>Cross Origin Resource Sharing</h2>
-<p>The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the <a href="http://www.w3.org/TR/cors">CORS W3C Recommendation</a>.</p>
-
-<p>Here’s a sample request sent from a browser hitting <code>http://example.com</code>:</p>
-<pre>
-$ curl -i https://api.w3.org -H "Origin: http://example.com"
-
-HTTP/1.1 200 OK
-Server: nginx/1.2.1
-Content-Type: application/json
-Access-Control-Allow-Origin: http://example.com
-Access-Control-Allow-Credentials: true
-</pre>
 
 </section>
 </html>
