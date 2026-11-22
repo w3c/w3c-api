@@ -5,12 +5,12 @@
 <link rel="stylesheet" type="text/css" href="style/base.css" />
 <h1>W3C API Overview</h1>
 <section>
-<h2 id=introduction>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>This page describes the resources forming the W3C API. If you have any problems or requests, please submit an <a href="https://github.com/w3c/w3c-api/issues">issue</a>.</p>
 <p>The W3C API is public and doesn't require authentication.</p>
 </section>
 <section>
-<h2 id=schema>Schema</h2>
+<h2 id="schema">Schema</h2>
 <p>All API access is over HTTPS, and accessed from the <code>api.w3.org</code> domain. All data is sent and received as JSON.</p>
 
 <p>The details about the different API endpoints are documented at <a href="https://api.w3.org/doc">https://api.w3.org/doc</a>.</p>
@@ -30,7 +30,7 @@ Date: Mon, 23 Jul 2023 12:10:43 GMT
 YYYY-MM-DDTHH:MM:SSZ
 </pre>
 
-<h2 id=parameters>Parameters</h2>
+<h2 id="parameters">Parameters</h2>
 <p>The W3C API takes optional parameters that can be passed as an HTTP query string parameter.</p>
 
 <p>List of parameters:</p>
@@ -47,7 +47,7 @@ YYYY-MM-DDTHH:MM:SSZ
     <tr>
       <td><code>embed</code></td>
       <td>boolean</td>
-      <td>By default, resources will be represented by links. On specific routes, the <code>embed</code> parameter allows to additionnaly embed related resources (see the <a href="http://stateless.co/hal_specification.html">HAL model</a> for more details)</td>
+      <td>By default, resources will be represented by links. On specific routes, the <code>embed</code> parameter allows you to additionally embed related resources (see the <a href="http://stateless.co/hal_specification.html">HAL model</a> for more details)</td>
       <td>https://api.w3.org/groups?embed=1</td>
     </tr>
     <tr>
@@ -65,16 +65,16 @@ YYYY-MM-DDTHH:MM:SSZ
     <tr>
       <td><code>page</code></td>
       <td>Integer</td>
-      <td>Specify which page should be displayed, Default value: 1</td>
+      <td>Default to which page should be displayed. Default.</td>
       <td>https://api.w3.org/groups?page=2</td>
     </tr>
   </tbody>
 </table>
 
-<h2 id=http_verbs>HTTP verbs</h2>
+<h2 id="http_verbs">HTTP verbs</h2>
 <p>For now, the W3C API is read-only. Therefore the only HTTP verb we support is <code>GET</code>.</p>
 
-<h2 id=pagination>Pagination</h2>
+<h2 id="pagination">Pagination</h2>
 <p>As mentioned in the <a href="#parameters">parameters section</a>, requests that return multiple items will be paginated to 100 items by default. You can specify further pages with the <code>?page</code> parameter. For some resources, you can also set a custom page size up to 1000 with the <code>?items</code> parameter.</p>
 
 <p>Note that page numbering is 1-based and that omitting the <code>?page</code> parameter will return the first page.</p>
@@ -82,6 +82,6 @@ YYYY-MM-DDTHH:MM:SSZ
 <h2 id="ratelimit">Rate limits</h2>
 
 <p>In order to prevent abuse, ensure fair resource usage and maintain stable performance of the API, we set up rate limiting at <strong>6000 requests per IP every 10 minutes</strong>.</p>
-
+<p>This section deals with some of the concerns raised by participants in this discussion recently.</p>
 </section>
 </html>
